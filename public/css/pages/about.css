@@ -1,0 +1,1 @@
+.banner{min-height:420px}@media screen and (max-width:425px){.banner{min-height:165px;background-size:cover;background-attachment:inherit}}.about-content{max-width:820px;margin:0 auto}.about-content p{text-align:justify;-moz-text-align-last:center;text-align-last:center}@media screen and (max-width:425px){.about-content{padding:0 30px}.about-content p{font-size:16px}}

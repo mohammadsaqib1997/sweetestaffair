@@ -1,0 +1,47 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "browserslist": [
+        "> 1%",
+        "ie >= 8",
+        "edge >= 15",
+        "ie_mob >= 10",
+        "ff >= 45",
+        "chrome >= 45",
+        "safari >= 7",
+        "opera >= 23",
+        "ios >= 7",
+        "android >= 4",
+        "bb >= 10"
+    ],
+    "devDependencies": {
+        "@fortawesome/fontawesome-free": "^5.10.2",
+        "autoprefixer": "^9.7.2",
+        "axios": "^0.19",
+        "bootstrap": "^4.3.1",
+        "buefy": "^0.8.5",
+        "cross-env": "^5.1",
+        "jquery": "^3.4.1",
+        "jquery.easing": "^1.4.1",
+        "laravel-mix": "^4.0.7",
+        "lodash": "^4.17.13",
+        "moment": "^2.24.0",
+        "popper.js": "^1.15.0",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.15.2",
+        "sass-loader": "^7.1.0",
+        "vue": "^2.6.10",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "simple-vue-validator": "^0.16.0"
+    }
+}
