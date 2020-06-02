@@ -35,6 +35,6 @@
             </li>
         </ul>
 
-        <p>&copy; Copyright <span class="f-nor">{{ date('Y') }}</span>, Sweetest Affair.</p>
+        <p>Copyright &copy; <span class="f-nor">{{ date('Y') }}</span>. Powered By <a href="https://dcomm.pk" target="_blank">Dimensions Communications.</a></p>
     </div>
 </footer>
