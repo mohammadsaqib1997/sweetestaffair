@@ -12,10 +12,17 @@ Vue.use(SimpleVueValidation);
 
 import App from './components/prdForm.vue';
 
+const mountEl = document.querySelector('#v-app');
+
 const app = new Vue({
     el: '#v-app',
     components: {
         App
     },
-    render: h => h(App)
+    render: h => {
+        const context = {
+            props: { ...mountEl.dataset }
+        }
+        return h(App, context);
+    }
 });

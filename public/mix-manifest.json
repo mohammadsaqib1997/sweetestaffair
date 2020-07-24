@@ -1,3 +1,5 @@
 {
-    "/css/app.min.css": "/css/app.min.css"
+    "/js/product.js": "/js/product.js",
+    "/css/app.min.css": "/css/app.min.css",
+    "/css/slick-thm.css": "/css/slick-thm.css"
 }

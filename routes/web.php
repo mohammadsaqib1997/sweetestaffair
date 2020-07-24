@@ -55,17 +55,19 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
         })->name('eve-bb-shower');
     });
 
-    Route::group(['prefix' => 'product'], function () {
-        Route::get('/florals', function () {
-            return view('florals');
-        })->name('florals');
+    Route::get('/product/{prd_slug}', 'MainController@prdItem')->name('product-item');
 
-        Route::get('/luxury-box', function () {
-            return view('luxury-box');
-        })->name('luxury-box');
+    // Route::group(['prefix' => 'product'], function () {
+    //     Route::get('/florals', function () {
+    //         return view('florals');
+    //     })->name('florals');
 
-        Route::get('/hampers', function () {
-            return view('hampers');
-        })->name('hampers');
-    });;
+    //     Route::get('/luxury-box', function () {
+    //         return view('luxury-box');
+    //     })->name('luxury-box');
+
+    //     Route::get('/hampers', function () {
+    //         return view('hampers');
+    //     })->name('hampers');
+    // });
 });

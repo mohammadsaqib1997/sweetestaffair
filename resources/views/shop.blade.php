@@ -34,13 +34,14 @@
     {{-- New Shop add --}}
     <div class="container mb-5">
         <div class="row">
-            @foreach ($prds as $item)
+            @foreach ($prds as $key => $item)
             <div class="col-sm-6 col-md-3 mt-4 px-0">
                 <div class="prd-item">
                     <figure>
                         <img class="lazy" data-src="{{ asset($item['img']) }}" alt="" />
                     </figure>
-                    <h4><a href="{{ route($item['route-name']) }}" class="stretched-link">{{ $item['title'] }}</a></h4>
+                    <h4><a href="{{ route($item['route-name'], ['prd_slug' => $key]) }}"
+                            class="stretched-link">{{ $item['title'] }}</a></h4>
                     <p class="meta-price">{{ $item['price-range'] }}</p>
                     <p>Shop Now</p>
                 </div>
