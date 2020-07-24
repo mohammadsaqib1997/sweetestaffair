@@ -1,0 +1,100 @@
+{
+    "mini-matchstick-box": {
+        "id": 1,
+        "title": "Mini Matchstick Box",
+        "price-range": "Rs. 1,250 ~ 1,450",
+        "img": "images/products/boxes/mini-matchstick-box/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "the-magnet-box": {
+        "id": 2,
+        "title": "The Magnet Box",
+        "price-range": "Rs. 1,500 ~ 2,050",
+        "img": "images/products/boxes/the-magnet-box/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "the-matchstick-box": {
+        "id": 3,
+        "title": "The Matchstick Box",
+        "price-range": "Rs. 2,250",
+        "img": "images/products/boxes/the-matchstick-box/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "the-ring-box": {
+        "id": 4,
+        "title": "The Ring Box",
+        "price-range": "Rs. 4,750",
+        "img": "images/products/boxes/the-ring-box/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "luxury-leather-box": {
+        "id": 5,
+        "title": "Luxury Leather Box",
+        "price-range": "Rs. 6,500 ~ 13,900",
+        "img": "images/products/boxes/luxury-leather-box/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "the-flower-bed": {
+        "id": 6,
+        "title": "The Flower Bed",
+        "price-range": "Rs. 10,500 ~ 19,500",
+        "img": "images/products/boxes/the-flower-bed/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "the-rose-box": {
+        "id": 7,
+        "title": "The Rose Box",
+        "price-range": "Rs. 12,500 ~ 75,000",
+        "img": "images/products/boxes/the-rose-box/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "hat-box-hamper": {
+        "id": 8,
+        "title": "Hat Box Hamper",
+        "price-range": "Rs. 12,500",
+        "img": "images/products/boxes/hat-box-hamper/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "leather-basket": {
+        "id": 9,
+        "title": "Leather Basket",
+        "price-range": "Rs. 17,500",
+        "img": "images/products/boxes/leather-basket/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "the-floral-gift-box": {
+        "id": 10,
+        "title": "The Floral Gift Box",
+        "price-range": "Rs. 10,500 ~ 19,500",
+        "img": "images/products/boxes/the-floral-gift-box/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "signature-sphere": {
+        "id": 11,
+        "title": "Signature Sphere",
+        "price-range": "Rs. 12,500",
+        "img": "images/products/boxes/signature-sphere/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "grand-celebration-bundle": {
+        "id": 12,
+        "title": "Grand Celebration Bundle",
+        "price-range": "Rs. 24,500",
+        "img": "images/products/boxes/grand-celebration-bundle/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "celebration-bundle": {
+        "id": 13,
+        "title": "Celebration Bundle",
+        "price-range": "Rs. 19,500",
+        "img": "images/products/boxes/celebration-bundle/main-500x500.jpg",
+        "route-name": "florals"
+    },
+    "pop-me-balloon": {
+        "id": 14,
+        "title": "Pop-Me Balloon",
+        "price-range": "Rs. 7,500",
+        "img": "images/products/boxes/pop-me-balloon/main-500x500.jpg",
+        "route-name": "florals"
+    }
+}

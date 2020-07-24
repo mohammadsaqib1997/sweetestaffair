@@ -30,7 +30,7 @@
                         </li>
                         <li>
                             <a href="{{ route('shop') }}">Shop</a>
-                            <ul class="dropdown">
+                            {{-- <ul class="dropdown">
                                 <li>
                                     <a>Florals</a>
                                     <i class="fas fa-chevron-right"></i>
@@ -55,7 +55,7 @@
                                 <li>
                                     <a href="{{ route('cakes') }}">Cakes</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </li>
                         <li>
                             <a href="{{ route('about') }}">About Us</a>

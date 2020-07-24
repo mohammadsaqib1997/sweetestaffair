@@ -31,39 +31,25 @@
     </div>
     {{-- container end --}}
 
-    {{-- container-fluid start --}}
-    <div class="container-fluid mb-5">
+    {{-- New Shop add --}}
+    <div class="container mb-5">
         <div class="row">
-            <div class="col-sm-6 col-md-4 mt-4 px-0">
+            @foreach ($prds as $item)
+            <div class="col-sm-6 col-md-3 mt-4 px-0">
                 <div class="prd-item">
                     <figure>
-                        <img class="lazy" data-src="{{ asset('images/floral/prd-1.jpg') }}" alt="" />
+                        <img class="lazy" data-src="{{ asset($item['img']) }}" alt="" />
                     </figure>
-                    <h4><a href="{{ route('florals') }}" class="stretched-link">Florals</a></h4>
-                    <p>Shop The Collection</p>
+                    <h4><a href="{{ route($item['route-name']) }}" class="stretched-link">{{ $item['title'] }}</a></h4>
+                    <p class="meta-price">{{ $item['price-range'] }}</p>
+                    <p>Shop Now</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/hampers/prd-1.jpg') }}" alt="" />
-                    </figure>
-                    <h4><a href="{{ route('hampers') }}" class="stretched-link">Hampers</a></h4>
-                    <p>Shop The Collection</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/acrylic/prd-1.jpg') }}" alt="" />
-                    </figure>
-                    <h4><a href="{{ route('hampers') }}" class="stretched-link">Acrylic Chest</a></h4>
-                    <p>Shop The Collection</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    {{-- container-fluid end --}}
+    {{-- New Shop add --}}
+
 </section>
 
 @include('inc.hm-footer')

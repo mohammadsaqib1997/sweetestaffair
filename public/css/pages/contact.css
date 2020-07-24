@@ -1,1 +1,10 @@
-@media screen and (max-width:425px){.content-sec,.content-sec p{font-size:16px}}
+@media screen and (max-width: 425px) {
+  .content-sec {
+    font-size: 16px;
+  }
+
+  .content-sec p {
+    font-size: 16px;
+  }
+}
+

@@ -26,9 +26,7 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
     Route::get('/about-us', function () {
         return view('about');
     })->name('about');
-    Route::get('/shop', function () {
-        return view('shop');
-    })->name('shop');
+    Route::get('/shop', "MainController@shop")->name('shop');
     // Route::get('/product/{id}', function ($id) {
     //     return view('product', ['slide' => $id]);
     // })->name('product');
