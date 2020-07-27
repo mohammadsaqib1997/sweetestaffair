@@ -57,6 +57,12 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
 
     Route::get('/product/{prd_slug}', 'MainController@prdItem')->name('product-item');
 
+    Route::post('/order-submit', 'MainController@orderSave');
+    Route::post('/order-success', 'MainController@storePaymentLog');
+    Route::get('/payment-success/{sig}', 'MainController@viewPaymentSuccessPage')->name('payment_success');
+    Route::get('/payment-cancel', 'MainController@viewCancelPaymentPage');
+    Route::get('/payment-failed', 'MainController@viewFailedPaymentPage')->name('payment-failed');
+
     // Route::group(['prefix' => 'product'], function () {
     //     Route::get('/florals', function () {
     //         return view('florals');

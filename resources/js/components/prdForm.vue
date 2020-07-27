@@ -2,69 +2,49 @@
   <div id="v-app" class="row my-5">
     <div class="col-md-5">
       <img class="img-fluid" v-if="gallery.length < 1" :src="mainImg" alt />
-      <div v-else-if="gallery.length > 0" class="slider mt-4">
-        <img v-for="(img, ind) in gallery" :key="ind" class="img-fluid lazy" :data-src="baseUrl+img" alt />
+      <div v-else-if="gallery.length > 0" class="slider mt-4 mt-md-0">
+        <img
+          v-for="(img, ind) in gallery"
+          :key="ind"
+          class="img-fluid lazy"
+          :data-src="baseUrl+img"
+          alt
+        />
       </div>
     </div>
     <div class="col-md">
       <div class="form mt-4 mt-md-0">
-        <!-- form dynamic -->
-        <div v-for="(vrt, ind) in variations" :key="ind" class="form-group">
-          <label v-if="vrt['label'] != ''" for>
-            {{ vrt['label'] }}
-            <small v-if="vrt['small'] != ''">{{ vrt['small'] }}</small>
-          </label>
-          <!-- select -->
-          <select v-if="vrt['type'] == 'select'" class="form-control" ref="variations-form">
-            <option value>Select {{ vrt['label'] }}</option>
-            <option
-              v-for="(opt, o_key, o_ind) in vrt['options']"
-              :key="o_ind"
-              :value="o_key"
-            >{{ opt['label'] }}</option>
-          </select>
-          <!-- select -->
-          <!-- radio buttons -->
-          <template v-if="vrt['type'] == 'radio'">
-            <div
-              v-for="(opt, o_key, o_ind) in vrt['options']"
-              :key="o_ind"
-              class="custom-control custom-radio custom-control-inline"
-            >
-              <input
-                type="radio"
-                :id="'rad-vrt-'+o_ind"
-                :name="'rad-name-'+ind"
-                :value="o_key"
-                class="custom-control-input"
-              />
-              <label class="custom-control-label" :for="'rad-vrt-'+o_ind">{{ opt['label'] }}</label>
-            </div>
-          </template>
-          <!-- radio buttons -->
+        <div class="form-group" v-if="form_error !== ''">
+          <p class="text-danger">{{ form_error }}</p>
         </div>
         <!-- form dynamic -->
+        <template v-for="(vrt, ind) in variations">
+          <!-- select -->
+          <select-input
+            ref="dyn-form"
+            :key="ind"
+            v-if="vrt['type'] == 'select'"
+            :options="vrt['options']"
+            :label="vrt['label']"
+            :small="vrt['small']"
+            @update_input="update_total"
+          />
+          <!-- select -->
+          <!-- radio buttons -->
+          <radio-input
+            ref="dyn-form"
+            :key="ind"
+            :fm_ind="ind"
+            v-else-if="vrt['type'] == 'radio'"
+            :options="vrt['options']"
+            :label="vrt['label']"
+            :small="vrt['small']"
+            @update_input="update_total"
+          />
+          <!-- radio buttons -->
+        </template>
+        <!-- form dynamic -->
 
-        <!-- <div class="form-group">
-          <label for>
-            Choice Of Preferred Flowers
-            <small>(Subject to Availability)</small>
-          </label>
-          <select
-            v-model="form.sel_flower"
-            id
-            class="form-control"
-            :class="{'invalid': validation.hasError('form.sel_flower')}"
-          >
-            <option value>Select Flowers</option>
-            <option v-for="(item, ind) in flowers" :key="ind" :value="ind">{{ item }}</option>
-          </select>
-          <p
-            class="text-danger small mt-1"
-            v-if="validation.hasError('form.sel_flower')"
-          >{{ validation.firstError('form.sel_flower') }}</p>
-        </div> -->
-        
         <div class="form-group">
           <label for>Quantity</label>
           <input
@@ -90,7 +70,7 @@
         </div>
         <div class="form-group">
           <label for>Delivery Date/Time</label>
-          <div class="form-row mx-0">
+          <div class="form-row">
             <div class="col">
               <input type="text" id="datepicker" class="form-control" placeholder="Select Date" />
             </div>
@@ -112,11 +92,81 @@
         </div>
         <div class="form-group">
           <label for>Personal Message</label>
-          <textarea name class="form-control" id rows="3" placeholder="Any comments ..."></textarea>
+          <textarea
+            name
+            class="form-control"
+            v-model="form.message"
+            id
+            rows="3"
+            placeholder="Any comments ..."
+          ></textarea>
+        </div>
+
+        <!-- customer information -->
+        <h3 class="mb-3 mt-5">Shipping Information</h3>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col">
+              <label for>Name</label>
+              <input
+                type="text"
+                class="form-control"
+                v-model="form.name"
+                placeholder="Enter your name"
+              />
+              <p
+                class="text-danger small mt-1"
+                v-if="validation.hasError('form.name') || validation.hasError('form.name')"
+              >{{ validation.firstError('form.name') || validation.firstError('form.name') }}</p>
+            </div>
+            <div class="col">
+              <label for>Phone</label>
+              <input
+                type="text"
+                class="form-control"
+                v-model="form.phone"
+                placeholder="Enter your phone number"
+              />
+              <p
+                class="text-danger small mt-1"
+                v-if="validation.hasError('form.phone') || validation.hasError('form.phone')"
+              >{{ validation.firstError('form.phone') || validation.firstError('form.phone') }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for>Email</label>
+          <input
+            type="text"
+            class="form-control"
+            v-model="form.email"
+            placeholder="Enter your email"
+          />
+          <p
+            class="text-danger small mt-1"
+            v-if="validation.hasError('form.email') || validation.hasError('form.email')"
+          >{{ validation.firstError('form.email') || validation.firstError('form.email') }}</p>
         </div>
 
         <div class="form-group">
-          <button @click="submit" class="btn thm-btn">Buy Now</button>
+          <label for>Shipping Address</label>
+          <textarea
+            name
+            class="form-control"
+            v-model="form.address"
+            id
+            rows="3"
+            placeholder="enter your address"
+          ></textarea>
+          <p
+            class="text-danger small mt-1"
+            v-if="validation.hasError('form.address') || validation.hasError('form.address')"
+          >{{ validation.firstError('form.address') || validation.firstError('form.address') }}</p>
+        </div>
+        <!-- customer information -->
+
+        <div class="form-group">
+          <button @click="submit" class="btn thm-btn" :disabled="form_process == true">Buy Now</button>
         </div>
       </div>
     </div>
@@ -124,32 +174,39 @@
 </template>
 
 <script>
-import prdMixin from "./mixins/floral_data.js";
+import SelectInput from "./select-input";
+import RadioInput from "./radio-input";
+import moment from "moment";
 import SimpleVueValidation from "simple-vue-validator";
 const Validator = SimpleVueValidation.Validator;
 export default {
-  mixins: [prdMixin],
+  components: {
+    "select-input": SelectInput,
+    "radio-input": RadioInput,
+  },
   props: ["appData"],
   computed: {
     mainImg: function () {
       return this.baseUrl + this.select_main_img;
     },
+    pr_price: function () {
+      const self = this;
+      let pr = self.base_price;
+      if (self.var_price !== "") {
+        pr += self.var_price;
+      }
+      return pr;
+    },
     pr_total: function () {
       const self = this;
-      let pr = 0;
-      if (self.form.sel_size !== "") {
-        pr += self.sizes[self.form.sel_size].pr;
-      }
-      if (self.form.sel_sweet !== "") {
-        pr += self.sweets[self.form.sel_sweet].pr;
-      }
-      if (self.form.sel_gift !== "") {
-        pr += self.gifts[self.form.sel_gift].pr;
-      }
+      let pr = self.pr_price;
+
       if (self.form.qty !== "") {
         if (!isNaN(self.form.qty) && !self.validation.hasError("form.qty")) {
           pr = parseInt(self.form.qty) * pr;
         }
+      } else {
+        pr = 0;
       }
       return pr;
     },
@@ -157,15 +214,21 @@ export default {
   mounted() {
     const self = this;
     const appData = JSON.parse(this.appData);
+    self.product_id = appData.id;
     self.select_main_img = appData.img;
     self.title = appData.title;
     self.variations = appData.variations;
-    console.log(appData);
+    self.base_price = appData.hasOwnProperty("base_price")
+      ? appData["base_price"]
+      : 0;
     if (appData.hasOwnProperty("gallery")) {
       self.gallery = appData.gallery;
       $("document").ready(function () {
+        $(".slider").on("beforeChange", function (event, slick) {
+          $(".lazy").Lazy();
+        });
         $(".slider").slick({
-          infinite: false,
+          infinite: true,
           arrows: false,
           draggable: true,
           dots: true,
@@ -182,7 +245,7 @@ export default {
         startDate: new Date(),
       })
       .on("changeDate", function (evt) {
-        self.form.sel_date = evt.date;
+        self.form.sel_date = moment(evt.date).format("YYYY-MM-DD");
       })
       .on("hide", function (evt) {
         if (typeof evt.date === "undefined") {
@@ -192,39 +255,29 @@ export default {
   },
   data() {
     return {
+      form_process: false,
+      form_error: "",
       baseUrl: "/",
       title: "",
       select_main_img: "",
       gallery: [],
       variations: [],
+      var_price: 0,
+      base_price: 0,
+      product_id: null,
       form: {
-        sel_flower: "",
-        sel_size: "",
-        sel_box_img: "",
-        sel_sweet: "",
-        sel_gift: "",
         qty: 1,
         sel_date: "",
         sel_time: "",
+        message: "",
+        name: "",
+        phone: "",
+        email: "",
+        address: "",
       },
     };
   },
   validators: {
-    "form.sel_flower": function (value) {
-      return Validator.value(value).required();
-    },
-    "form.sel_size": function (value) {
-      return Validator.value(value).required();
-    },
-    "form.sel_box_img": function (value) {
-      return Validator.value(value).required();
-    },
-    "form.sel_sweet": function (value) {
-      return Validator.value(value).required();
-    },
-    "form.sel_gift": function (value) {
-      return Validator.value(value).required();
-    },
     "form.qty": function (value) {
       let validator = Validator.value(value).required();
       if (!validator.hasImmediateError()) {
@@ -243,28 +296,84 @@ export default {
     "form.sel_time": function (value) {
       return Validator.value(value).required();
     },
+    "form.message": function (value) {
+      return Validator.value(value).maxLength(500);
+    },
+    "form.name": function (value) {
+      return Validator.value(value).required();
+    },
+    "form.phone": function (value) {
+      return Validator.value(value).required();
+    },
+    "form.email": function (value) {
+      return Validator.value(value).required();
+    },
+    "form.address": function (value) {
+      return Validator.value(value).required();
+    },
   },
   methods: {
-    changeSize() {
-      this.form.sel_box_img = "";
-      // this.select_main_img = "images/floral/prd-1.jpg";
-    },
-    selectBoxSizeImg(item) {
-      this.form.sel_box_img = item.img;
-      // this.select_main_img = item.f_img;
-    },
-    submit: function () {
-      this.$validate().then(function (success) {
+    submit: async function () {
+      const self = this;
+      self.form_error = "";
+      self.form_process = true;
+      let selected_variations = [];
+      if (self.$refs.hasOwnProperty("dyn-form")) {
+        selected_variations = await Promise.all(
+          self.$refs["dyn-form"].map(function (form) {
+            return form.validate();
+          })
+        ).then(function (variations) {
+          return variations.filter(function (variation) {
+            return typeof variation !== "undefined";
+          });
+        });
+      }
+
+      await self.$validate().then(function (success) {
         if (success) {
-          alert("Order Complete.");
+          axios
+            .post(self.baseUrl + "order-submit", {
+              ...self.form,
+              selected_variations,
+              product_id: self.product_id,
+              pr_price: self.pr_price,
+              pr_total: self.pr_total,
+            })
+            .then((res) => {
+              if (res.data.status === "ok") {
+                window.location.href = res.data.link;
+              } else {
+                self.form_error_evt("Server Error! Please try again!");
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+              self.form_error_evt(err.message);
+            })
+            .finally(() => {
+              self.form_process = false;
+            });
+        } else {
+          self.form_process = false;
         }
       });
+    },
+    form_error_evt: function (err) {
+      this.form_error = err;
+      $("html, body")
+        .stop()
+        .animate({ scrollTop: $("#v-app").offset().top }, 500, "swing");
+    },
+    update_total: function (e) {
+      this.var_price = this.var_price - e["old"];
+      this.var_price = this.var_price + e["price"];
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .img-cont {
   border-radius: 5px;
   overflow: hidden;

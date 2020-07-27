@@ -72,7 +72,7 @@
                     <figure>
                         <img class="lazy" data-src="{{ asset('images/floral/prd-2.jpg') }}" alt="" />
                     </figure>
-                    <h4><a href="{{ route('florals') }}" class="stretched-link">Florals</a></h4>
+                    <h4><a href="#" class="stretched-link">Florals</a></h4>
                     <p>Shop The Collection</p>
                 </div>
             </div>
@@ -90,7 +90,7 @@
                     <figure>
                         <img class="lazy" data-src="{{ asset('images/hampers/prd-1.jpg') }}" alt="" />
                     </figure>
-                    <h4><a href="{{ route('hampers') }}" class="stretched-link">Hampers</a></h4>
+                    <h4><a href="#" class="stretched-link">Hampers</a></h4>
                     <p>Shop The Collection</p>
                 </div>
             </div>
@@ -144,7 +144,7 @@
                         <img class="lazy" data-src="{{ asset('images/floral/prd-1.jpg') }}" alt="" />
                     </figure>
                     <h4 class="mb-3">Rs. 3000/-</h4>
-                    <a href="{{ route('florals') }}" class="btn thm-btn mb-3">Add To Cart</a>
+                    <a href="#" class="btn thm-btn mb-3">Add To Cart</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-3 mt-4 px-0">
@@ -153,7 +153,7 @@
                         <img class="lazy" data-src="{{ asset('images/chocolates/prd-1.jpg') }}" alt="" />
                     </figure>
                     <h4 class="mb-3">Rs. 5000/-</h4>
-                    <a href="{{ route('florals') }}" class="btn thm-btn mb-3">Add To Cart</a>
+                    <a href="#" class="btn thm-btn mb-3">Add To Cart</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-3 mt-4 px-0">
@@ -162,7 +162,7 @@
                         <img class="lazy" data-src="{{ asset('images/chocolates/prd-3.jpg') }}" alt="" />
                     </figure>
                     <h4 class="mb-3">Rs. 7000/-</h4>
-                    <a href="{{ route('florals') }}" class="btn thm-btn mb-3">Add To Cart</a>
+                    <a href="#" class="btn thm-btn mb-3">Add To Cart</a>
                 </div>
             </div>
             <div class="col-sm-6 col-md-3 mt-4 px-0">

@@ -3,6 +3,7 @@
 @section('title', $prd['title'].' | Product')
 
 @section('page-css')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{ asset('vendors/datepicker/bootstrap-datepicker3.min.css') }}">
 <link rel="stylesheet" href="{{ asset('vendors/slick/slick.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css/slick-thm.css') }}">

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a81ea5a73ebc29fdd013d76177a616e",
+    "content-hash": "705e80e41d51fc47481c416ff1a7e884",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -420,6 +420,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -466,6 +467,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -2890,6 +2892,44 @@
                 "environment"
             ],
             "time": "2019-09-10T21:37:39+00:00"
+        },
+        {
+            "name": "webribs/safepay-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webribs/safepay-laravel.git",
+                "reference": "487c038bbcff50c62a68c96e79fc7a3ba86be3eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webribs/safepay-laravel/zipball/487c038bbcff50c62a68c96e79fc7a3ba86be3eb",
+                "reference": "487c038bbcff50c62a68c96e79fc7a3ba86be3eb",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Webribs\\Safepay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rizwan Saleem",
+                    "email": "rizwansaleem70@gmail.com",
+                    "homepage": "http://webribs.com"
+                }
+            ],
+            "description": "Safepay payment gateway integration with Laravel",
+            "keywords": [
+                "laravel payment gateway",
+                "safepay"
+            ],
+            "time": "2020-06-19T20:58:18+00:00"
         }
     ],
     "packages-dev": [
@@ -4878,7 +4918,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "webribs/safepay-laravel": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -16,12 +16,12 @@ mix
     // .js('resources/js/app.js', 'public/js')
     // .js('resources/js/jq-global.js', 'public/js')
     
-    .sass('resources/sass/app.scss', 'public/css/app.min.css', [
-        Prefixer()
-    ])
-    .sass('resources/sass/pages/slick-thm.scss', 'public/css/', [
-        Prefixer()
-    ])
+    // .sass('resources/sass/app.scss', 'public/css/app.min.css', [
+    //     Prefixer()
+    // ])
+    // .sass('resources/sass/pages/slick-thm.scss', 'public/css/', [
+    //     Prefixer()
+    // ])
     // .sass('resources/sass/pages/about.scss', 'public/css/pages/', [
     //     Prefixer()
     // ])

@@ -51,7 +51,39 @@
         "title": "The Magnet Box",
         "price-range": "Rs. 1,500 ~ 2,050",
         "img": "images/products/the-magnet-box/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "assorted-artisinal-chocolates-6-pcs": {
+                        "label": "Assorted Artisinal Chocolates (6 pcs)",
+                        "price": 1500
+                    },
+                    "mini-chewy-melt-cookies-14-pcs": {
+                        "label": "Assorted Artisinal Chocolates (9 pcs)",
+                        "price": 2050
+                    }
+                }
+            },
+            {
+                "type": "radio",
+                "label": "",
+                "small": "",
+                "options": {
+                    "wrapped": {
+                        "label": "Wrapped",
+                        "price": 0
+                    },
+                    "unwrapped": {
+                        "label": "Unwrapped",
+                        "price": 0
+                    }
+                }
+            }
+        ]
     },
     "the-matchstick-box": {
         "id": 3,

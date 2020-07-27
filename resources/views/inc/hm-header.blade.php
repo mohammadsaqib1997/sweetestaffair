@@ -74,11 +74,11 @@
                             <i class="fas fa-search"></i>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
