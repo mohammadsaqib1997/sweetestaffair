@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
     Route::get('/under-construction', function () {
         return view('under-const');

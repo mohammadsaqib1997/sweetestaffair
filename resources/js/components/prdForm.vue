@@ -42,6 +42,17 @@
             @update_input="update_total"
           />
           <!-- radio buttons -->
+          <!-- text input -->
+          <text-input
+            ref="dyn-form"
+            :key="ind"
+            v-else-if="vrt['type'] == 'text'"
+            :options="vrt['options']"
+            :label="vrt['label']"
+            :small="vrt['small']"
+            @update_input="update_total"
+          />
+          <!-- text input -->
         </template>
         <!-- form dynamic -->
 
@@ -176,6 +187,7 @@
 <script>
 import SelectInput from "./select-input";
 import RadioInput from "./radio-input";
+import TextInput from "./text-input";
 import moment from "moment";
 import SimpleVueValidation from "simple-vue-validator";
 const Validator = SimpleVueValidation.Validator;
@@ -183,6 +195,7 @@ export default {
   components: {
     "select-input": SelectInput,
     "radio-input": RadioInput,
+    "text-input": TextInput,
   },
   props: ["appData"],
   computed: {

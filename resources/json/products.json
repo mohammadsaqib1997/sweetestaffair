@@ -62,7 +62,7 @@
                         "label": "Assorted Artisinal Chocolates (6 pcs)",
                         "price": 1500
                     },
-                    "mini-chewy-melt-cookies-14-pcs": {
+                    "mini-chewy-melt-cookies-9-pcs": {
                         "label": "Assorted Artisinal Chocolates (9 pcs)",
                         "price": 2050
                     }
@@ -83,6 +83,14 @@
                     }
                 }
             }
+        ],
+        "gallery": [
+            "images/products/the-magnet-box/main.jpg",
+            "images/products/the-magnet-box/slide-1.jpg",
+            "images/products/the-magnet-box/v1.jpg",
+            "images/products/the-magnet-box/v2.jpg",
+            "images/products/the-magnet-box/v3.jpg",
+            "images/products/the-magnet-box/v4.jpg"
         ]
     },
     "the-matchstick-box": {
@@ -90,83 +98,390 @@
         "title": "The Matchstick Box",
         "price-range": "Rs. 2,250",
         "img": "images/products/the-matchstick-box/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "assorted-artisinal-chocolates-12-pcs": {
+                        "label": "Assorted Artisinal Chocolates (12 pcs)",
+                        "price": 2250
+                    }
+                }
+            },
+            {
+                "type": "radio",
+                "label": "",
+                "small": "",
+                "options": {
+                    "wrapped": {
+                        "label": "Wrapped",
+                        "price": 0
+                    },
+                    "unwrapped": {
+                        "label": "Unwrapped",
+                        "price": 0
+                    }
+                }
+            }
+        ],
+        "gallery": [
+            "images/products/the-matchstick-box/main.jpg",
+            "images/products/the-matchstick-box/slide-1.jpg",
+            "images/products/the-matchstick-box/v1.jpg",
+            "images/products/the-matchstick-box/v2.jpg",
+            "images/products/the-matchstick-box/v3.jpg",
+            "images/products/the-matchstick-box/v4.jpg"
+        ]
     },
     "the-ring-box": {
         "id": 4,
         "title": "The Ring Box",
         "price-range": "Rs. 4,750",
         "img": "images/products/the-ring-box/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "assorted-artisinal-chocolates-15-pcs": {
+                        "label": "Assorted Artisinal Chocolates (15 pcs)",
+                        "price": 4750
+                    }
+                }
+            },
+            {
+                "type": "radio",
+                "label": "",
+                "small": "",
+                "options": {
+                    "wrapped": {
+                        "label": "Wrapped",
+                        "price": 0
+                    },
+                    "unwrapped": {
+                        "label": "Unwrapped",
+                        "price": 0
+                    }
+                }
+            }
+        ],
+        "gallery": [
+            "images/products/the-ring-box/main.jpg",
+            "images/products/the-ring-box/slide-1.jpg",
+            "images/products/the-ring-box/v1.jpg",
+            "images/products/the-ring-box/v2.jpg",
+            "images/products/the-ring-box/v3.jpg",
+            "images/products/the-ring-box/v4.jpg"
+        ]
     },
     "luxury-leather-box": {
         "id": 5,
         "title": "Luxury Leather Box",
         "price-range": "Rs. 6,500 ~ 13,900",
         "img": "images/products/luxury-leather-box/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "assorted-artisinal-chocolates-25-pcs": {
+                        "label": "Assorted Artisinal Chocolates (25 pcs)",
+                        "price": 6500
+                    },
+                    "assorted-artisinal-chocolates-36-pcs": {
+                        "label": "Assorted Artisinal Chocolates (36 pcs)",
+                        "price": 8500
+                    },
+                    "assorted-artisinal-chocolates-54-pcs": {
+                        "label": "Assorted Artisinal Chocolates (54 pcs)",
+                        "price": 13900
+                    }
+                }
+            },
+            {
+                "type": "radio",
+                "label": "",
+                "small": "",
+                "options": {
+                    "wrapped": {
+                        "label": "Wrapped",
+                        "price": 0
+                    },
+                    "unwrapped": {
+                        "label": "Unwrapped",
+                        "price": 0
+                    }
+                }
+            }
+        ],
+        "gallery": [
+            "images/products/luxury-leather-box/main.jpg",
+            "images/products/luxury-leather-box/slide-1.jpg",
+            "images/products/luxury-leather-box/v1.jpg",
+            "images/products/luxury-leather-box/v2.jpg",
+            "images/products/luxury-leather-box/v3.jpg"
+        ]
     },
     "the-flower-bed": {
         "id": 6,
         "title": "The Flower Bed",
         "price-range": "Rs. 10,500 ~ 19,500",
         "img": "images/products/the-flower-bed/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "small-size-assorted-fresh-blooms-artisinal-chocolates-12-pcs": {
+                        "label": "Small Size | Assorted Fresh Blooms | Artisinal Chocolates (12 pcs)",
+                        "price": 10500
+                    },
+                    "medium-size-assorted-fresh-blooms-artisinal-chocolates-16-pcs": {
+                        "label": "Medium Size | Assorted Fresh Blooms | Artisinal Chocolates (16 pcs)",
+                        "price": 14500
+                    },
+                    "large-size-assorted-fresh-blooms-artisinal-chocolates-24-pcs": {
+                        "label": "Large Size | Assorted Fresh Blooms | Artisinal Chocolates (24 pcs)",
+                        "price": 19500
+                    }
+                }
+            }
+        ],
+        "gallery": [
+            "images/products/the-flower-bed/main.jpg",
+            "images/products/the-flower-bed/slide-1.jpg"
+        ]
     },
     "the-rose-box": {
         "id": 7,
         "title": "The Rose Box",
         "price-range": "Rs. 12,500 ~ 75,000",
         "img": "images/products/the-rose-box/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "10-ecuadorian-roses": {
+                        "label": "Ten Ecuadorian Roses",
+                        "price": 12500
+                    },
+                    "12-ecuadorian-roses": {
+                        "label": "Twelve Ecuadorian Roses",
+                        "price": 14000
+                    },
+                    "25-ecuadorian-roses": {
+                        "label": "Twenty Five Ecuadorian Roses",
+                        "price": 17500
+                    },
+                    "50-ecuadorian-roses": {
+                        "label": "Fifty Ecuadorian Roses",
+                        "price": 29500
+                    },
+                    "100-ecuadorian-roses": {
+                        "label": "One Hundred Ecuadorian Roses",
+                        "price": 75000
+                    }
+                }
+            }
+        ],
+        "gallery": [
+            "images/products/the-rose-box/main.jpg",
+            "images/products/the-rose-box/slide-1.jpg",
+            "images/products/the-rose-box/v1.jpg",
+            "images/products/the-rose-box/v2.jpg"
+        ]
     },
     "hat-box-hamper": {
         "id": 8,
         "title": "Hat Box Hamper",
         "price-range": "Rs. 12,500",
         "img": "images/products/hat-box-hamper/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "6-pcs-chocolate-box-mini-chewy-melt-cookies-cocoa-dusted-almonds-candle": {
+                        "label": "6 Pcs Chocolate Box | Mini Chewy Melt Cookies Cocoa Dusted Almonds | Candle",
+                        "price": 12500
+                    }
+                }
+            }
+        ]
     },
     "leather-basket": {
         "id": 9,
         "title": "Leather Basket",
         "price-range": "Rs. 17,500",
         "img": "images/products/leather-basket/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "9-pcs-chocolate-box-cocoa-dusted-almonds-candle-flowers": {
+                        "label": "9 Pcs Chocolate Box | Cocoa Dusted Almonds Candle | Flowers",
+                        "price": 17500
+                    }
+                }
+            }
+        ]
     },
     "the-floral-gift-box": {
         "id": 10,
         "title": "The Floral Gift Box",
         "price-range": "Rs. 10,500 ~ 19,500",
         "img": "images/products/the-floral-gift-box/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "assorted-seasonal-flowers-artisinal-belgian-chocolates-12-pcs": {
+                        "label": "Assorted Seasonal Flowers | Artisinal Belgian Chocolates 12 Pcs",
+                        "price": 10500
+                    },
+                    "assorted-seasonal-flowers-artisinal-belgian-chocolates-15-pcs": {
+                        "label": "Assorted Seasonal Flowers | Artisinal Belgian Chocolates 15 Pcs",
+                        "price": 14500
+                    },
+                    "assorted-seasonal-flowers-artisinal-belgian-chocolates-24-pcs": {
+                        "label": "Assorted Seasonal Flowers | Artisinal Belgian Chocolates 24 Pcs",
+                        "price": 19500
+                    }
+                }
+            },
+            {
+                "type": "text",
+                "label": "Personalized Message",
+                "small": "",
+                "options": {
+                    "message": {
+                        "label": "Personalized Message",
+                        "price": 0
+                    }
+                }
+            }
+        ]
     },
     "signature-sphere": {
         "id": 11,
         "title": "Signature Sphere",
         "price-range": "Rs. 12,500",
         "img": "images/products/signature-sphere/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "17-point-5-cms-belgian-chocolate-sphere-mini-cake-for-four-personalized-topper": {
+                        "label": "17.5 Cms Belgian Chocolate Sphere | Mini Cake For Four | Personalized Topper",
+                        "price": 12500
+                    }
+                }
+            }
+        ]
     },
     "grand-celebration-bundle": {
         "id": 12,
         "title": "Grand Celebration Bundle",
         "price-range": "Rs. 24,500",
         "img": "images/products/grand-celebration-bundle/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "celebration-cake-floral-box-9-pcs-box-of-chocolates": {
+                        "label": "Celebration Cake | Floral Box | 9 Pcs Box Of Chocolates",
+                        "price": 24500
+                    }
+                }
+            },
+            {
+                "type": "text",
+                "label": "Personalized Message",
+                "small": "",
+                "options": {
+                    "message": {
+                        "label": "Personalized Message",
+                        "price": 0
+                    }
+                }
+            }
+        ]
     },
     "celebration-bundle": {
         "id": 13,
         "title": "Celebration Bundle",
         "price-range": "Rs. 19,500",
         "img": "images/products/celebration-bundle/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "celebration-cake-floral-box": {
+                        "label": "Celebration Cake | Floral Box",
+                        "price": 19500
+                    }
+                }
+            },
+            {
+                "type": "text",
+                "label": "Personalized Message",
+                "small": "",
+                "options": {
+                    "message": {
+                        "label": "Personalized Message",
+                        "price": 0
+                    }
+                }
+            }
+        ]
     },
     "pop-me-balloon": {
         "id": 14,
         "title": "Pop-Me Balloon",
         "price-range": "Rs. 7,500",
         "img": "images/products/pop-me-balloon/main-500x500.jpg",
-        "route-name": "product-item"
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "select",
+                "label": "Size",
+                "small": "",
+                "options": {
+                    "personalizing-service-one-stuffed-toy-one-6-pcs-box-of-chocolates-balloon-tray": {
+                        "label": "Personalizing Service | One Stuffed Toy | One 6 Pcs Box Of Chocolates | Balloon Tray",
+                        "price": 7500
+                    }
+                }
+            }
+        ]
     }
 }
