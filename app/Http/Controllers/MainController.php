@@ -22,7 +22,7 @@ class MainController extends Controller
         ];
 
         $best_seller = [
-            'eid-cake-hamper' => $products['eid-cake-hamper'],
+            'eid-cake-hamper' => $products['signature-sphere'],
             'flower-bag' => $products['flower-bag'],
             'luxury-leather-box' => $products['luxury-leather-box'],
             'celebration-bundle' => $products['celebration-bundle']
