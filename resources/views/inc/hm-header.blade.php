@@ -58,6 +58,9 @@
                             </ul> --}}
                         </li>
                         <li>
+                            <a href="{{ route('eid-shop') }}">Eid Specials</a>
+                        </li>
+                        <li>
                             <a href="{{ route('about') }}">About Us</a>
                         </li>
                         <li>

@@ -1,4 +1,4 @@
-$baseurl: "/sweetestaffair/"; // /sweetestaffair/
+$baseurl: "/"; // /sweetestaffair/
 $text-color: #3d251d;
 $text-hover-color: #e1c16c;
 $box-shadow-light: rgba(225, 193, 108, 0.25);
@@ -478,6 +478,24 @@ body {
     justify-content: space-between;
     figure {
       margin-bottom: 0.5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      @media (min-width: 1200px) {
+        max-height: 270px;
+      }
+      @media (min-width: 992px) and (max-width: 1199px) {
+        max-height: 230px;
+      }
+      @media (min-width: 768px) and (max-width: 991px) {
+        max-height: 165px;
+      }
+      @media (min-width: 576px) and (max-width: 767px) {
+        max-height: 260px;
+      }
+      // @media (max-width: 575px) {
+      //   max-height: 260px;
+      // }
       img {
         width: 100%;
       }

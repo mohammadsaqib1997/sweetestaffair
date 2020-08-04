@@ -13,13 +13,39 @@ class MainController extends Controller
 {
     public function index()
     {
-        return null;
+        $products =  array_reverse($this->product_catalogue());
+        $our_products = [
+            'the-floral-gift-box' => $products['the-floral-gift-box'],
+            'the-ring-box' => $products['the-ring-box'],
+            'eid-basket' => $products['eid-basket'],
+            'celebration-cake' => $products['celebration-cake']
+        ];
+
+        $best_seller = [
+            'eid-cake-hamper' => $products['eid-cake-hamper'],
+            'flower-bag' => $products['flower-bag'],
+            'luxury-leather-box' => $products['luxury-leather-box'],
+            'celebration-bundle' => $products['celebration-bundle']
+        ];
+        return view('main', ['our_products' => $our_products, 'best_seller' => $best_seller]);
     }
 
     public function shop()
     {
-        $products = $this->product_catalogue();
+        $products =  array_reverse($this->product_catalogue());
         return view('shop', ['prds' => $products]);
+    }
+
+    public function eidSpecials()
+    {
+        $products =  array_reverse($this->product_catalogue());
+        $grab = [];
+        foreach ($products as $key => $prd) {
+            if (isset($prd['eid-specials']) && $prd['eid-specials'] == true) {
+                $grab[$key] = $prd;
+            }
+        }
+        return view('shop', ['prds' => $grab, 'title' => "Eid Specials"]);
     }
 
     private function product_catalogue()
@@ -48,7 +74,7 @@ class MainController extends Controller
         $order->customer_address = $req->address;
         $order->customer_message = $req->message;
         $order->product_id = $req->product_id;
-        $order->product_options = json_encode($req->variations);
+        $order->product_options = json_encode($req->selected_variations);
         $order->base_price = $req->pr_price;
         $order->qty = $req->qty;
         $order->total_price = $req->pr_total;

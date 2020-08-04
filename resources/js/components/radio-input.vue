@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label v-if="label != ''" for>
+    <label class="d-block" v-if="label != ''" for>
       {{ label }}
       <small v-if="small != ''">{{ small }}</small>
     </label>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Shop')
+@section('title', isset($title) ? $title: 'Shop')
 
 @section('page-css')
 @endsection
@@ -11,7 +11,7 @@
 <section class="products-sec p-0 navbar-pad">
     {{-- container start --}}
     <div class="container py-4">
-        <h3 class="display-4">Shop</h3>
+        <h3 class="display-4">{{ isset($title) ? $title: 'Shop' }}</h3>
         {{-- <div class="content">
             <p>Each milestone, each relationship, every kind of bond calls for a unique celebration.</p>
             <p>A celebration of moments and emotions that are just blooming, even celebrating those that have already

@@ -65,44 +65,21 @@
                 Affair.</p>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
+            @foreach ($our_products as $key => $item)
             <div class="col-sm-6 col-md-3 mt-4 px-0">
                 <div class="prd-item">
                     <figure>
-                        <img class="lazy" data-src="{{ asset('images/floral/prd-2.jpg') }}" alt="" />
+                        <img class="lazy" data-src="{{ asset($item['img']) }}" alt="" />
                     </figure>
-                    <h4><a href="#" class="stretched-link">Florals</a></h4>
-                    <p>Shop The Collection</p>
+                    <h4><a href="{{ route($item['route-name'], ['prd_slug' => $key]) }}"
+                            class="stretched-link">{{ $item['title'] }}</a></h4>
+                    <p class="meta-price">{{ $item['price-range'] }}</p>
+                    <p>Shop Now</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/chocolates/prd-2.jpg') }}" alt="" />
-                    </figure>
-                    <h4><a href="{{ route('construction') }}" class="stretched-link">Chocolates</a></h4>
-                    <p>Shop The Collection</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/hampers/prd-1.jpg') }}" alt="" />
-                    </figure>
-                    <h4><a href="#" class="stretched-link">Hampers</a></h4>
-                    <p>Shop The Collection</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/cakes/prd-1.jpg') }}" alt="" />
-                    </figure>
-                    <h4><a href="{{ route('construction') }}" class="stretched-link">Cakes</a></h4>
-                    <p>Shop The Collection</p>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="text-center mt-4">
             <a href="{{ route('shop') }}" class="btn thm-btn">Show More</a>
@@ -136,44 +113,21 @@
     <div class="container">
         <h3 class="display-4">Best Sellers</h3>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
+            @foreach ($best_seller as $key => $item)
             <div class="col-sm-6 col-md-3 mt-4 px-0">
                 <div class="prd-item">
                     <figure>
-                        <img class="lazy" data-src="{{ asset('images/floral/prd-1.jpg') }}" alt="" />
+                        <img class="lazy" data-src="{{ asset($item['img']) }}" alt="" />
                     </figure>
-                    <h4 class="mb-3">Rs. 3000/-</h4>
-                    <a href="#" class="btn thm-btn mb-3">Add To Cart</a>
+                    <h4><a href="{{ route($item['route-name'], ['prd_slug' => $key]) }}"
+                            class="stretched-link">{{ $item['title'] }}</a></h4>
+                    <p class="meta-price">{{ $item['price-range'] }}</p>
+                    <p>Shop Now</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/chocolates/prd-1.jpg') }}" alt="" />
-                    </figure>
-                    <h4 class="mb-3">Rs. 5000/-</h4>
-                    <a href="#" class="btn thm-btn mb-3">Add To Cart</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/chocolates/prd-3.jpg') }}" alt="" />
-                    </figure>
-                    <h4 class="mb-3">Rs. 7000/-</h4>
-                    <a href="#" class="btn thm-btn mb-3">Add To Cart</a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3 mt-4 px-0">
-                <div class="prd-item">
-                    <figure>
-                        <img class="lazy" data-src="{{ asset('images/cakes/prd-1.jpg') }}" alt="" />
-                    </figure>
-                    <h4 class="mb-3">Rs. 10000/-</h4>
-                    <a href="{{ route('construction') }}" class="btn thm-btn mb-3">Add To Cart</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -184,7 +138,7 @@
         <p class="txt-content">Since we are a Digital Boutique it would be best if you contact us via email at
             info@sweetestaffair.com
             In case you need to get in touch with us via phone you can call us on +923 00 22 96 555, (Business hours:
-            Seven days a week, 10:30 a.m - 11:30 pm)</p>
+            Seven days a week, 11:00 am - 09:00 pm)</p>
         <div class="row mx-w-1100">
             <div class="col mb-4 mb-md-0">
                 <div class="cont-item">

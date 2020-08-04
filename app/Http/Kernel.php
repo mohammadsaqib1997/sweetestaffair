@@ -38,7 +38,6 @@ class Kernel extends HttpKernel
         ],
 
         'auth.private' => [
-            'admin.auth:admin',
             'private'
         ],
 
@@ -57,7 +56,6 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
-        'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class,
         'private' => \App\Http\Middleware\PrivateResponse::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,

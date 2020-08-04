@@ -22,13 +22,12 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
         return view('cakes');
     })->name('cakes');
 
-    Route::get('', function () {
-        return view('main');
-    })->name('main');
+    Route::get('', 'MainController@index')->name('main');
     Route::get('/about-us', function () {
         return view('about');
     })->name('about');
     Route::get('/shop', "MainController@shop")->name('shop');
+    Route::get('/eid-specials', "MainController@eidSpecials")->name('eid-shop');
     // Route::get('/product/{id}', function ($id) {
     //     return view('product', ['slide' => $id]);
     // })->name('product');
@@ -39,13 +38,13 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
         return view('search');
     })->name('search');
 
-    Route::get('/special-occasions', function () {
-        return view('special-occasion');
-    })->name('spec-occas');
+    // Route::get('/special-occasions', function () {
+    //     return view('special-occasion');
+    // })->name('spec-occas');
 
-    Route::get('/chocolates', function () {
-        return view('chocolates');
-    })->name('chocolates');
+    // Route::get('/chocolates', function () {
+    //     return view('chocolates');
+    // })->name('chocolates');
 
     Route::group(['prefix' => 'events'], function () {
         Route::get('/', function () {
@@ -65,17 +64,7 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
     Route::get('/payment-cancel', 'MainController@viewCancelPaymentPage');
     Route::get('/payment-failed', 'MainController@viewFailedPaymentPage')->name('payment-failed');
 
-    // Route::group(['prefix' => 'product'], function () {
-    //     Route::get('/florals', function () {
-    //         return view('florals');
-    //     })->name('florals');
-
-    //     Route::get('/luxury-box', function () {
-    //         return view('luxury-box');
-    //     })->name('luxury-box');
-
-    //     Route::get('/hampers', function () {
-    //         return view('hampers');
-    //     })->name('hampers');
-    // });
+    Route::get('/order-email-client', function () {
+        return view('mails.client-order-email');
+    });
 });

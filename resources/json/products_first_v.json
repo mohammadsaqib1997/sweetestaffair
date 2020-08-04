@@ -550,6 +550,20 @@
         "route-name": "product-item",
         "variations": []
     },
+    "eid-cake-hamper": {
+        "id": 19,
+        "eid-specials": true,
+        "title": "Eid Cake Hamper",
+        "price-range": "Rs. 12,500",
+        "base_price": 12500,
+        "img": "images/products/eid-specials/eid-cake-hamper/prd-1.jpeg",
+        "route-name": "product-item",
+        "variations": [],
+        "gallery": [
+            "images/products/eid-specials/eid-cake-hamper/prd-1.jpeg",
+            "images/products/eid-specials/eid-cake-hamper/prd-2.jpeg"
+        ]
+    },
     "eid-basket": {
         "id": 20,
         "eid-specials": true,
