@@ -8,6 +8,8 @@ use Exception;
 use Illuminate\Http\Request;
 use Webribs\Safepay\Models\PaymentLog;
 use Webribs\Safepay\Safepay;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class MainController extends Controller
 {
@@ -119,6 +121,8 @@ class MainController extends Controller
         $order->order_status = 1;
         $order->save();
 
+        $this->orderEmails($order);
+
         return redirect()->route('payment_success', $data['sig']);
     }
 
@@ -140,5 +144,108 @@ class MainController extends Controller
             return view('payment-error', ["title" => "Payment Failed", "sub_heading" => $error, "message" => ""]);
         else
             return abort(404);
+    }
+
+    private function orderEmails($order)
+    {
+        // $order = Order::findOrFail($order_id);
+        $prd = $this->prdById($order['product_id']);
+        $details = [
+            'order' => $order,
+            'prd' => $prd
+        ];
+        try {
+            Mail::send(
+                'mails.client-order-email',
+                $details,
+                function ($message) use ($details) {
+                    $message->from('order@sweetestaffair.com');
+                    $message->to($details['order']['customer_email']);
+                    $message->subject('Your order has been placed.');
+                }
+            );
+            Mail::send(
+                'mails.host-order-email',
+                $details,
+                function ($message) use ($details) {
+                    $message->from('order@sweetestaffair.com');
+                    $message->to('order@sweetestaffair.com');
+                    $message->subject('New order received');
+                }
+            );
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    private function prdById($id)
+    {
+        $prds = $this->product_catalogue();
+        $sel_prd = [];
+        foreach ($prds as $key => $item) {
+            if ($item['id'] == $id) {
+                $sel_prd = $item;
+                break;
+            }
+        }
+        return $sel_prd;
+    }
+
+    public function contactMail(Request $req)
+    {
+        $req->merge(['name' => preg_replace('/\s+/', ' ', $req->input('name'))]);
+        $req->merge(['phone' => preg_replace('/\s+/', ' ', $req->input('phone'))]);
+
+        $validator = Validator::make($req->all(), [
+            'name' => 'bail|required|min:3|max:255',
+            'phone' => 'bail|required|min:8|max:20',
+            'email' => 'bail|required|email',
+            'message' => 'bail|required|min:3|max:255'
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect('/contact-us#form')
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $req_valid = [
+                'name' => $req->input('name'),
+                'phone' => $req->input('phone'),
+                'email' => $req->input('email'),
+                'content' => $req->input('message'),
+            ];
+            Mail::send(
+                'mails.contact',
+                $req_valid,
+                function ($message) use ($req_valid) {
+                    $message->from('info@sweetestaffair.com');
+                    $message->to('info@sweetestaffair.com');
+                    $message->subject('Contact Form');
+                }
+            );
+
+            return redirect('/contact-us#form')->with('status', 'You have successfully sent an email!');
+        }
+    }
+
+    public function searchShop(Request $req)
+    {
+        if ($req->get('q') != null) {
+            $search = strtolower($req->get('q'));
+            $prds = $this->product_catalogue();
+            $s_prds = [];
+            foreach ($prds as $key => $prd) {
+                if (strpos(strtolower($prd['title']), $search) > -1) {
+                    $s_prds[$key] = $prd;
+                }
+            }
+            return view('search', [
+                'prds' => $s_prds
+            ]);
+        } else {
+            return abort(404);
+        }
     }
 }

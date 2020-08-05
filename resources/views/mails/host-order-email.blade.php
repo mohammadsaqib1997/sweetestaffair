@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Your order has been placed</title>
+  <title>New Order Received</title>
 </head>
 
 <body>
@@ -25,27 +25,13 @@
               </tr>
               <tr>
                 <td style="text-align: center;background-color: #3e271d;color: white;font-size: 13px;">
-                  <h3 style="margin: 6px 0;">Your order has been placed</h3>
+                  <h3 style="margin: 6px 0;">New Order Received</h3>
                 </td>
               </tr>
               <tr>
                 <td style="padding: 10px 15px;">
-                  <p style="font-size: 15px;">
-                    Hey {{ $order['customer_name'] }},
-                    <br>
-                    <br>
-                    Great choice. You ordered delicious sweets from <strong style="color: #3e271d;">The Sweetest
-                      Affair</strong>.
-                    <br>
-                    <br>
-                    Check below for your order details.
-                    <br>
-                    <br>
-                    If you have any questions, feel free to contact us at any time via email at
-                    <a style="color: #3e271d;" href="mailto:support@sweetestaffair.com">support@sweetestaffair.com</a>.
-                  </p>
                   <table cellpadding="0" cellspacing="0"
-                    style="width: 100%;border-top: 1px solid #3e271d;margin-top: 30px;padding-top: 10px;">
+                    style="width: 100%;">
                     <tbody>
                       <tr>
                         <td>

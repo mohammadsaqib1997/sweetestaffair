@@ -34,9 +34,9 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
     Route::get('/contact-us', function () {
         return view('contact');
     })->name('contact');
-    Route::get('/search', function () {
-        return view('search');
-    })->name('search');
+    Route::post('/contact-us', "MainController@contactMail")->name('contact-mail');
+
+    Route::get('/search', 'MainController@searchShop')->name('search');
 
     // Route::get('/special-occasions', function () {
     //     return view('special-occasion');
@@ -64,7 +64,5 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
     Route::get('/payment-cancel', 'MainController@viewCancelPaymentPage');
     Route::get('/payment-failed', 'MainController@viewFailedPaymentPage')->name('payment-failed');
 
-    Route::get('/order-email-client', function () {
-        return view('mails.client-order-email');
-    });
+    // Route::get('/order-email-client/{order_id}', 'MainController@clientOrderEmial');
 });

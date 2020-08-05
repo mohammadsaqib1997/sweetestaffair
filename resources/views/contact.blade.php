@@ -15,30 +15,48 @@
     </div>
 </section>
 
-<section class="bg-light py-5 content-sec">
+<section class="bg-light py-5 content-sec" id="form">
     <div class="container">
         <h3>Get in Touch</h3>
         <p>If you have general questions about what we do or how The Sweetest Affair can help you,
             <br>please fill out the contact form below or call us directly on the given numbers.</p>
-
         <div class="row mt-4">
-            <div class="col-12 col-md-6">
+
+            <form action="{{ route('contact-mail') }}" method="POST" class="col-12 col-md-6">
+                @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+                @endif
+                @csrf
                 <div class="form-group">
-                    <input type="text" name="full_name" class="form-control" placeholder="Full Name">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" value="{{ old('name') }}">
+                    @error('name')
+                    <p class="text-danger small text-right">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Email">
+                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                    @error('email')
+                    <p class="text-danger small text-right">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <input type="tel" name="phone_number" class="form-control" placeholder="Phone Number">
+                    <input type="tel" name="phone" class="form-control" placeholder="Phone Number" value="{{ old('phone') }}">
+                    @error('phone')
+                    <p class="text-danger small text-right">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <textarea name="message" class="form-control" rows="3" placeholder="Message"></textarea>
+                    <textarea name="message" class="form-control" rows="3" placeholder="Message">{{ old('message') }}</textarea>
+                    @error('message')
+                    <p class="text-danger small text-right">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="form-group text-right">
-                    <button class="btn thm-btn">Submit</button>
+                    <button type="submit" class="btn thm-btn">Submit</button>
                 </div>
-            </div>
+            </form>
             <div class="col-12 col-md-6">
                 <div class="row">
                     <div class="col-md-4 mt-3"><strong>Office Address :</strong></div>
