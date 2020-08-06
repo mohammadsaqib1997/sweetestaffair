@@ -11,16 +11,23 @@
 @include('inc.hm-header')
 
 <div class="slider-container">
+    <div class="video-wrapper">
+        <video autoplay muted loop>
+            <source src="{{ asset('videos/hm-vid-1.mp4') }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
     {{-- <div class="slider">
-        <div style="background-image: url({{ asset('images/sld-bn-4.jpg') }});"></div>
-        <div style="background-image: url({{ asset('images/sld-bn-2.jpeg') }});"></div>
-        <div style="background-image: url({{ asset('images/sld-bn-5.jpeg') }});"></div>
-        <div style="background-image: url({{ asset('images/sld-bn-1.jpeg') }});"></div>
-    </div> --}}
+        <div style="background-image: url({{ asset('images/sld-bn-4.jpg') }});">
+</div>
+<div style="background-image: url({{ asset('images/sld-bn-2.jpeg') }});"></div>
+<div style="background-image: url({{ asset('images/sld-bn-5.jpeg') }});"></div>
+<div style="background-image: url({{ asset('images/sld-bn-1.jpeg') }});"></div>
+</div> --}}
 </div>
 
-<section class="info-sec py-4">
-    {{-- <div class="container">
+{{-- <section class="info-sec py-4">
+    <div class="container">
         <div class="row">
             <div class="col-12 col-md">
                 <h4>The Sweetest Affair</h4>
@@ -33,8 +40,8 @@
                 <a href="{{ route('about') }}" class="btn thm-btn">Read More</a>
     </div>
     </div>
-    </div> --}}
-</section>
+    </div> 
+</section> --}}
 
 <section class="bg-img-sec lazy info-sec" data-src="{{ asset('images/sld-bn-3.jpg') }}">
     <div class="container-fluid">

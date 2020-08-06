@@ -770,5 +770,16 @@
         "img": "images/products/signature-collections/cricket-fever.jpeg",
         "route-name": "product-item",
         "variations": []
+    },
+    "chocolate-hazelnut": {
+        "id": 38,
+        "cat": "cakes|jiggle-me-&-pull-cake",
+        "eid-specials": true,
+        "title": "Chocolate Hazelnut",
+        "price-range": "Rs. 3,750",
+        "base_price": 3750,
+        "img": "images/products/signature-collections/chocolate-hazelnut.jpeg",
+        "route-name": "product-item",
+        "variations": []
     }
 }
