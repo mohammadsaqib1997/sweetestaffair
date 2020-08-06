@@ -11,12 +11,12 @@
 @include('inc.hm-header')
 
 <div class="slider-container">
-    <div class="slider">
-        <div style="background-image: url({{ asset('images/sld-bn-5.jpeg') }});"></div>
+    {{-- <div class="slider">
         <div style="background-image: url({{ asset('images/sld-bn-4.jpg') }});"></div>
         <div style="background-image: url({{ asset('images/sld-bn-2.jpeg') }});"></div>
+        <div style="background-image: url({{ asset('images/sld-bn-5.jpeg') }});"></div>
         <div style="background-image: url({{ asset('images/sld-bn-1.jpeg') }});"></div>
-    </div>
+    </div> --}}
 </div>
 
 <section class="info-sec py-4">

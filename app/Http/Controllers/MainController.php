@@ -10,6 +10,7 @@ use Webribs\Safepay\Models\PaymentLog;
 use Webribs\Safepay\Safepay;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class MainController extends Controller
 {
@@ -24,7 +25,7 @@ class MainController extends Controller
         ];
 
         $best_seller = [
-            'eid-cake-hamper' => $products['signature-sphere'],
+            'eid-cake-hamper' => $products['artisinal-chocolate-sphere'],
             'flower-bag' => $products['flower-bag'],
             'luxury-leather-box' => $products['luxury-leather-box'],
             'celebration-bundle' => $products['celebration-bundle']
@@ -32,10 +33,25 @@ class MainController extends Controller
         return view('main', ['our_products' => $our_products, 'best_seller' => $best_seller]);
     }
 
-    public function shop()
+    public function shop($cat = null)
     {
         $products =  array_reverse($this->product_catalogue());
-        return view('shop', ['prds' => $products]);
+        $title = 'Shop';
+        $cat_prds = [];
+        if ($cat != null) {
+            foreach ($products as $key => $item) {
+                if (strpos($item['cat'], $cat) > -1) {
+                    $cat_prds[$key] = $item;
+                }
+            }
+            if (count($cat_prds) < 1) {
+                return abort(404);
+            } else {
+                $title = Str::ucfirst(implode(" ", explode("-", $cat)));
+                $products = $cat_prds;
+            }
+        }
+        return view('shop', ['prds' => $products, 'title' => $title]);
     }
 
     public function eidSpecials()

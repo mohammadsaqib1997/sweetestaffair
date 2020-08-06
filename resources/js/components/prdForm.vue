@@ -177,7 +177,7 @@
         <!-- customer information -->
 
         <div class="form-group">
-          <button @click="submit" class="btn thm-btn" :disabled="form_process == true">Buy Now</button>
+          <button @click="submit" class="btn thm-btn" :disabled="form_process == true">Let's Lock It &nbsp;&nbsp;<i class="fas fa-shopping-cart"></i></button>
         </div>
       </div>
     </div>

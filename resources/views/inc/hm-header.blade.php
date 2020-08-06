@@ -30,45 +30,54 @@
                         </li>
                         <li>
                             <a href="{{ route('shop') }}">Shop</a>
-                            {{-- <ul class="dropdown">
-                                <li>
+                            <ul class="dropdown">
+                                {{-- <li>
                                     <a>Florals</a>
                                     <i class="fas fa-chevron-right"></i>
                                     <ul class="dropdown">
                                         <li>
                                             <a href="{{ route('florals') }}">Flower Boxes</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('luxury-box') }}">Luxury Rose Boxes</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('spec-occas') }}">Special Occasions</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="{{ route('chocolates') }}">Chocolates</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('hampers') }}">Hampers</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('cakes') }}">Cakes</a>
-                                </li>
-                            </ul> --}}
                         </li>
                         <li>
-                            <a href="{{ route('eid-shop') }}">Eid Specials</a>
+                            <a href="{{ route('luxury-box') }}">Luxury Rose Boxes</a>
                         </li>
                         <li>
-                            <a href="{{ route('about') }}">About Us</a>
+                            <a href="{{ route('spec-occas') }}">Special Occasions</a>
                         </li>
-                        <li>
-                            <a href="{{ route('events') }}">Events</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('contact') }}">Contact Us</a>
-                        </li>
+                    </ul>
+                    </li> --}}
+                    <li>
+                        <a href="{{ route('shop', ['cat' => 'jiggle-me-&-pull-cake']) }}">Jiggle Me & Pull Cake</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('shop', ['cat' => 'signature-collections']) }}">Signature Collections</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('shop', ['cat' => 'cakes']) }}">Cakes</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('shop', ['cat' => 'chocolates']) }}">Chocolates</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('shop', ['cat' => 'hampers']) }}">Hampers</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('shop', ['cat' => 'flowers']) }}">Flowers</a>
+                    </li>
+                    </ul>
+                    </li>
+                    <li>
+                        <a href="{{ route('eid-shop') }}">Eid Specials</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('about') }}">About Us</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('events') }}">Events</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('contact') }}">Contact Us</a>
+                    </li>
                     </ul>
                 </nav>
                 <ul class="cart-menu">

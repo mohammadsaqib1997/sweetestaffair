@@ -16,12 +16,15 @@ mix
     // .js('resources/js/app.js', 'public/js')
     // .js('resources/js/jq-global.js', 'public/js')
     
-    .sass('resources/sass/app.scss', 'public/css/app.min.css', [
-        Prefixer()
-    ])
+    // .sass('resources/sass/app.scss', 'public/css/app.min.css', [
+    //     Prefixer()
+    // ])
     // .sass('resources/sass/pages/slick-thm.scss', 'public/css/', [
     //     Prefixer()
     // ])
+    .sass('resources/sass/pages/home.scss', 'public/css/pages/', [
+        Prefixer()
+    ])
     // .sass('resources/sass/pages/about.scss', 'public/css/pages/', [
     //     Prefixer()
     // ])
@@ -38,7 +41,7 @@ mix
     //     Prefixer()
     // ])
     // .js('resources/js/home.js', 'public/js')
-    .js('resources/js/product.js', 'public/js')
+    // .js('resources/js/product.js', 'public/js')
     // .js('resources/js/hamper.js', 'public/js')
     // .js('resources/js/gallery.js', 'public/js')
     // .js('resources/js/luxury-box.js', 'public/js')

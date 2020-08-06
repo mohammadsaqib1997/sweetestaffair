@@ -1,6 +1,7 @@
 {
     "mini-matchstick-box": {
         "id": 1,
+        "cat": "chocolates",
         "title": "Mini Matchstick Box",
         "price-range": "Rs. 1,250 ~ 1,450",
         "img": "images/products/mini-matchstick-box/main-500x500.jpg",
@@ -48,6 +49,7 @@
     },
     "the-magnet-box": {
         "id": 2,
+        "cat": "chocolates",
         "title": "The Magnet Box",
         "price-range": "Rs. 1,500 ~ 2,050",
         "img": "images/products/the-magnet-box/main-500x500.jpg",
@@ -95,6 +97,7 @@
     },
     "the-matchstick-box": {
         "id": 3,
+        "cat": "chocolates",
         "title": "The Matchstick Box",
         "price-range": "Rs. 2,250",
         "img": "images/products/the-matchstick-box/main-500x500.jpg",
@@ -138,6 +141,7 @@
     },
     "the-ring-box": {
         "id": 4,
+        "cat": "chocolates",
         "title": "The Ring Box",
         "price-range": "Rs. 5,750",
         "img": "images/products/the-ring-box/main-500x500.jpg",
@@ -181,6 +185,7 @@
     },
     "luxury-leather-box": {
         "id": 5,
+        "cat": "chocolates",
         "title": "Luxury Leather Box",
         "price-range": "Rs. 6,500 ~ 13,900",
         "img": "images/products/luxury-leather-box/main-500x500.jpg",
@@ -231,6 +236,7 @@
     },
     "the-flower-bed": {
         "id": 6,
+        "cat": "chocolates",
         "title": "The Flower Bed",
         "price-range": "Rs. 10,500 ~ 19,500",
         "img": "images/products/the-flower-bed/main-500x500.jpg",
@@ -263,6 +269,7 @@
     },
     "the-rose-box": {
         "id": 7,
+        "cat": "flowers",
         "title": "The Rose Box",
         "price-range": "Rs. 12,500 ~ 75,000",
         "img": "images/products/the-rose-box/main-500x500.jpg",
@@ -305,6 +312,7 @@
     },
     "hat-box-hamper": {
         "id": 8,
+        "cat": "hampers",
         "title": "Hat Box Hamper",
         "price-range": "Rs. 12,500",
         "img": "images/products/hat-box-hamper/main-500x500.jpg",
@@ -325,6 +333,7 @@
     },
     "leather-basket": {
         "id": 9,
+        "cat": "hampers",
         "title": "Leather Basket",
         "price-range": "Rs. 17,500",
         "img": "images/products/leather-basket/main-500x500.jpg",
@@ -345,6 +354,7 @@
     },
     "the-floral-gift-box": {
         "id": 10,
+        "cat": "flowers",
         "title": "The Floral Gift Box",
         "price-range": "Rs. 10,500 ~ 19,500",
         "img": "images/products/the-floral-gift-box/main-500x500.jpg",
@@ -382,9 +392,10 @@
             }
         ]
     },
-    "signature-sphere": {
+    "artisinal-chocolate-sphere": {
         "id": 11,
-        "title": "Signature Sphere",
+        "cat": "cakes|signature-collections",
+        "title": "Artisinal Chocolate Sphere",
         "price-range": "Rs. 12,500",
         "img": "images/products/signature-sphere/main-500x500.jpg",
         "route-name": "product-item",
@@ -404,6 +415,7 @@
     },
     "grand-celebration-bundle": {
         "id": 12,
+        "cat": "",
         "title": "Grand Celebration Bundle",
         "price-range": "Rs. 24,500",
         "img": "images/products/grand-celebration-bundle/main-500x500.jpg",
@@ -435,6 +447,7 @@
     },
     "celebration-bundle": {
         "id": 13,
+        "cat": "",
         "title": "Celebration Bundle",
         "price-range": "Rs. 19,500",
         "img": "images/products/celebration-bundle/main-500x500.jpg",
@@ -466,6 +479,7 @@
     },
     "pop-me-balloon": {
         "id": 14,
+        "cat": "",
         "title": "Pop-Me Balloon",
         "price-range": "Rs. 7,500",
         "img": "images/products/pop-me-balloon/main-500x500.jpg",
@@ -486,6 +500,7 @@
     },
     "flower-bag": {
         "id": 15,
+        "cat": "flowers",
         "eid-specials": true,
         "title": "Flower bag",
         "price-range": "Rs. 5,750 ~ 7,500",
@@ -511,6 +526,7 @@
     },
     "floral-alphabets": {
         "id": 16,
+        "cat": "flowers",
         "eid-specials": true,
         "title": "Floral Alphabets",
         "price-range": "Rs. 29,500",
@@ -532,6 +548,7 @@
     },
     "eternity-gold-rose-in-glass-dome": {
         "id": 17,
+        "cat": "",
         "eid-specials": true,
         "title": "Eternity Gold Rose in Glass Dome",
         "price-range": "Rs. 17,500",
@@ -542,6 +559,7 @@
     },
     "special-eid-cake-in-cylinderical-leatherette-box": {
         "id": 18,
+        "cat": "cakes",
         "eid-specials": true,
         "title": "Special Eid Cake in Cylinderical Leatherette Box",
         "price-range": "Rs. 6,500",
@@ -552,6 +570,7 @@
     },
     "eid-basket": {
         "id": 20,
+        "cat": "hampers",
         "eid-specials": true,
         "title": "Eid Basket",
         "price-range": "Rs. 22,500",
@@ -562,6 +581,7 @@
     },
     "10-rose-box": {
         "id": 21,
+        "cat": "",
         "eid-specials": true,
         "title": "10 Rose box",
         "price-range": "Rs. 12,500",
@@ -570,10 +590,11 @@
         "route-name": "product-item",
         "variations": []
     },
-    "swing-cake": {
+    "swing-cake-single-tier": {
         "id": 22,
+        "cat": "cakes|signature-collections",
         "eid-specials": true,
-        "title": "Swing Cake",
+        "title": "Swing Cake (Single tier)",
         "price-range": "Rs. 32,500",
         "base_price": 32500,
         "img": "images/products/eid-specials/swing-cake.jpeg",
@@ -582,11 +603,171 @@
     },
     "celebration-cake": {
         "id": 23,
+        "cat": "cakes",
         "eid-specials": true,
         "title": "Celebration Cake",
         "price-range": "Rs. 12,500",
         "base_price": 12500,
         "img": "images/products/eid-specials/celebration-cake.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "dr-adam-suess": {
+        "id": 24,
+        "cat": "cakes",
+        "title": "Dr Adam Suess",
+        "price-range": "Rs. 8,000",
+        "base_price": 8000,
+        "img": "images/products/signature-collections/dr-adam-suess.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "secret-garden": {
+        "id": 25,
+        "cat": "cakes",
+        "title": "Secret Garden",
+        "price-range": "Rs. 8,500",
+        "base_price": 8500,
+        "img": "images/products/signature-collections/secret-garden.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "a-floral-fantasy": {
+        "id": 26,
+        "cat": "cakes",
+        "title": "A Floral Fantasy",
+        "price-range": "Rs. 8,500",
+        "base_price": 8500,
+        "img": "images/products/signature-collections/a-floral-fantasy.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "number-cakes": {
+        "id": 27,
+        "cat": "cakes",
+        "title": "Number Cakes",
+        "price-range": "Rs. 14,500",
+        "img": "images/products/signature-collections/number-cakes.jpeg",
+        "route-name": "product-item",
+        "variations": [
+            {
+                "type": "text",
+                "label": "Type number 0-9",
+                "small": "",
+                "options": {
+                    "message": {
+                        "label": "Type number",
+                        "price": 14500
+                    }
+                }
+            }
+        ]
+    },
+    "the-forty's-club": {
+        "id": 28,
+        "cat": "cakes|signature-collections",
+        "title": "The Forty’s Club",
+        "price-range": "Rs. 18,500",
+        "base_price": 18500,
+        "img": "images/products/signature-collections/the-forty's-club.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "floral-fiesta": {
+        "id": 29,
+        "cat": "cakes",
+        "title": "Floral Fiesta",
+        "price-range": "Rs. 5,500",
+        "base_price": 5500,
+        "img": "images/products/signature-collections/floral-fiesta.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "swing-cake-double-tier": {
+        "id": 30,
+        "cat": "cakes|signature-collections",
+        "eid-specials": true,
+        "title": "Swing Cake (Double tier)",
+        "price-range": "Rs. 37,000",
+        "base_price": 37000,
+        "img": "images/products/signature-collections/swing-cake-double-tier.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "the-first": {
+        "id": 31,
+        "cat": "cakes",
+        "eid-specials": true,
+        "title": "The First",
+        "price-range": "Rs. 10,500",
+        "base_price": 10500,
+        "img": "images/products/signature-collections/the-first.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "the-anniversary-sphere": {
+        "id": 32,
+        "cat": "cakes|signature-collections",
+        "eid-specials": true,
+        "title": "The Anniversary Sphere",
+        "price-range": "Rs. 17,500",
+        "base_price": 17500,
+        "img": "images/products/signature-collections/the-anniversary-sphere.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "mango-jiggle-me-&-pull-cake-in-acrylic-box": {
+        "id": 33,
+        "cat": "cakes|jiggle-me-&-pull-cake",
+        "eid-specials": true,
+        "title": "Mango Jiggle Me & Pull cake in acrylic box",
+        "price-range": "Rs. 6,500",
+        "base_price": 6500,
+        "img": "images/products/signature-collections/mango-jiggle-me-&-pull-cake-in-acrylic-box.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "signature-chocolate-sphere-with-florals-&-balloons": {
+        "id": 34,
+        "cat": "cakes|signature-collections",
+        "eid-specials": true,
+        "title": "Signature Chocolate Sphere with Florals & Balloons",
+        "price-range": "Rs. 18,500",
+        "base_price": 18500,
+        "img": "images/products/signature-collections/signature-chocolate-sphere-with-florals-&-balloons.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "macaron-tower": {
+        "id": 35,
+        "cat": "cakes",
+        "eid-specials": true,
+        "title": "Macaron Tower",
+        "price-range": "Rs. 27,500",
+        "base_price": 27500,
+        "img": "images/products/signature-collections/macaron-tower.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "the-beaut": {
+        "id": 36,
+        "cat": "cakes",
+        "eid-specials": true,
+        "title": "The Beaut",
+        "price-range": "Rs. 27,500",
+        "base_price": 27500,
+        "img": "images/products/signature-collections/the-beaut.jpeg",
+        "route-name": "product-item",
+        "variations": []
+    },
+    "cricket-fever": {
+        "id": 37,
+        "cat": "cakes|signature-collections",
+        "eid-specials": true,
+        "title": "Cricket Fever",
+        "price-range": "Rs. 15,000",
+        "base_price": 15000,
+        "img": "images/products/signature-collections/cricket-fever.jpeg",
         "route-name": "product-item",
         "variations": []
     }
