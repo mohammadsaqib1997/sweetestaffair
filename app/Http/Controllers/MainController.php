@@ -93,6 +93,9 @@ class MainController extends Controller
         $order->customer_message = $req->message;
         $order->product_id = $req->product_id;
         $order->product_options = json_encode($req->selected_variations);
+        $order->selected_zone = $req->sel_zone;
+        $order->delivery_type = $req->delivery_type;
+        $order->delivery_charges = $req->delivery_charges;
         $order->base_price = $req->pr_price;
         $order->qty = $req->qty;
         $order->total_price = $req->pr_total;

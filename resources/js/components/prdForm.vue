@@ -71,19 +71,95 @@
             v-if="validation.hasError('form.qty')"
           >{{ validation.firstError('form.qty') }}</p>
         </div>
-        <div class="form-row my-3 mx-0 gr-total">
-          <div class="col">
-            <label class="my-2">Grand Total</label>
-          </div>
-          <div class="col text-right">
-            <label class="my-2">Rs. {{ pr_total }}/-</label>
+
+        <div class="form-row my-5 mx-0 gr-total">
+          <div class="col-12">
+            <div class="row mx-0">
+              <div class="col">
+                <label class="my-2">Product Price</label>
+              </div>
+              <div class="col text-right">
+                <label class="my-2">{{ prd_qty > 1 ? 'x'+prd_qty+' ': '' }}Rs. {{ pr_price }}/-</label>
+              </div>
+            </div>
+            <div v-if="form.delivery_type == 'Deliver'" class="row mx-0">
+              <div class="col">
+                <label class="my-2">Delivery Charges</label>
+              </div>
+              <div class="col text-right">
+                <label class="my-2">Rs. {{ selected_zone_price }}/-</label>
+              </div>
+            </div>
+
+            <div class="row mx-0 border-top">
+              <div class="col">
+                <label class="my-2">Grand Total</label>
+              </div>
+              <div class="col text-right">
+                <label class="my-2">Rs. {{ pr_total }}/-</label>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Delivery or Pickup -->
         <div class="form-group">
-          <label for>Delivery Date/Time</label>
+          <label class="d-block" for>Select Delivery Type</label>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input
+              type="radio"
+              id="delivery_type_deliver"
+              name="delivery_type"
+              v-model="form.delivery_type"
+              value="Deliver"
+              class="custom-control-input"
+            />
+            <label class="custom-control-label" for="delivery_type_deliver">Deliver</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input
+              type="radio"
+              id="delivery_type_pickup"
+              name="delivery_type"
+              v-model="form.delivery_type"
+              value="Pickup"
+              class="custom-control-input"
+            />
+            <label class="custom-control-label" for="delivery_type_pickup">Pickup</label>
+          </div>
+          <p
+            class="text-danger small mt-1"
+            v-if="validation.hasError('form.delivery_type')"
+          >{{ validation.firstError('form.delivery_type') }}</p>
+        </div>
+
+        <div v-if="form.delivery_type == 'Deliver'" class="form-group">
+          <label class="d-block" for>Select Zone</label>
+          <select v-model="form.sel_zone" class="form-control">
+            <option value>Select Zone</option>
+            <option
+              v-for="(val, ind) in delivery_charges"
+              :key="ind"
+              :value="val.label"
+            >{{ val.label }}</option>
+          </select>
+          <p
+            class="text-danger small mt-1"
+            v-if="validation.hasError('form.sel_zone')"
+          >{{ validation.firstError('form.sel_zone') }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for>{{ delr_type_text }} Date/Time</label>
           <div class="form-row">
             <div class="col">
-              <input type="text" id="datepicker" class="form-control" placeholder="Select Date" />
+              <input
+                type="text"
+                id="datepicker"
+                autocomplete="off"
+                class="form-control"
+                placeholder="Select Date"
+              />
             </div>
             <div class="col">
               <select v-model="form.sel_time" class="form-control">
@@ -114,7 +190,9 @@
         </div>
 
         <!-- customer information -->
-        <h3 class="mb-3 mt-5">Shipping Information</h3>
+        <h3
+          class="mb-3 mt-5"
+        >{{ form.delivery_type == "Deliver" ? 'Shipping': 'Personal' }} Information</h3>
         <div class="form-group">
           <div class="form-row">
             <div class="col">
@@ -159,7 +237,7 @@
           >{{ validation.firstError('form.email') || validation.firstError('form.email') }}</p>
         </div>
 
-        <div class="form-group">
+        <div v-if="form.delivery_type == 'Deliver'" class="form-group">
           <label for>Shipping Address</label>
           <textarea
             name
@@ -177,7 +255,10 @@
         <!-- customer information -->
 
         <div class="form-group">
-          <button @click="submit" class="btn thm-btn" :disabled="form_process == true">Let's Lock It &nbsp;&nbsp;<i class="fas fa-shopping-cart"></i></button>
+          <button @click="submit" class="btn thm-btn" :disabled="form_process == true">
+            Let's Lock It &nbsp;&nbsp;
+            <i class="fas fa-shopping-cart"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -199,6 +280,27 @@ export default {
   },
   props: ["appData"],
   computed: {
+    has_delr: function () {
+      return this.form.delivery_type == "Deliver";
+    },
+    delr_type_text: function () {
+      if (this.has_delr) {
+        return "Delivery";
+      }
+      return this.form.delivery_type;
+    },
+    selected_zone_price: function () {
+      if (this.form.sel_zone != "") {
+        return this.delivery_charges[this.form.sel_zone].price;
+      }
+      return 0;
+    },
+    prd_qty: function () {
+      if (!isNaN(this.form.qty) && !this.validation.hasError("form.qty")) {
+        return parseInt(this.form.qty);
+      }
+      return 0;
+    },
     mainImg: function () {
       return this.baseUrl + this.select_main_img;
     },
@@ -214,12 +316,14 @@ export default {
       const self = this;
       let pr = self.pr_price;
 
-      if (self.form.qty !== "") {
-        if (!isNaN(self.form.qty) && !self.validation.hasError("form.qty")) {
-          pr = parseInt(self.form.qty) * pr;
-        }
+      if (self.prd_qty !== 0) {
+        pr = parseInt(self.prd_qty) * pr;
       } else {
         pr = 0;
+      }
+
+      if (self.has_delr) {
+        pr += self.selected_zone_price;
       }
       return pr;
     },
@@ -252,19 +356,15 @@ export default {
     }
     self.baseUrl =
       document.head.querySelector('meta[name="base-url"]').content + "/";
-    $("#datepicker")
-      .datepicker({
-        autoclose: true,
-        startDate: new Date(),
-      })
-      .on("changeDate", function (evt) {
-        self.form.sel_date = moment(evt.date).format("YYYY-MM-DD");
-      })
-      .on("hide", function (evt) {
-        if (typeof evt.date === "undefined") {
-          self.form.sel_date = "";
-        }
-      });
+
+    self.datepicker_set();
+  },
+  watch: {
+    delr_type_text: function () {
+      this.datepicker_set();
+      this.form.sel_zone = "";
+      this.form.address = "";
+    },
   },
   data() {
     return {
@@ -275,6 +375,24 @@ export default {
       select_main_img: "",
       gallery: [],
       variations: [],
+      delivery_charges: {
+        DHA: {
+          label: "DHA",
+          price: 750,
+        },
+        Clifton: {
+          label: "Clifton",
+          price: 750,
+        },
+        PECHS: {
+          label: "PECHS",
+          price: 750,
+        },
+        Other: {
+          label: "Other",
+          price: 1250,
+        },
+      },
       var_price: 0,
       base_price: 0,
       product_id: null,
@@ -287,6 +405,8 @@ export default {
         phone: "",
         email: "",
         address: "",
+        delivery_type: "Deliver",
+        sel_zone: "",
       },
     };
   },
@@ -322,7 +442,21 @@ export default {
       return Validator.value(value).required();
     },
     "form.address": function (value) {
+      let validator = Validator.value(value);
+      if (this.has_delr) {
+        validator.required();
+      }
+      return validator;
+    },
+    "form.delivery_type": function (value) {
       return Validator.value(value).required();
+    },
+    "form.sel_zone": function (value) {
+      let validator = Validator.value(value);
+      if (this.has_delr) {
+        validator.required();
+      }
+      return validator;
     },
   },
   methods: {
@@ -331,6 +465,7 @@ export default {
       self.form_error = "";
       self.form_process = true;
       let selected_variations = [];
+      let has_variation_success = false;
       if (self.$refs.hasOwnProperty("dyn-form")) {
         selected_variations = await Promise.all(
           self.$refs["dyn-form"].map(function (form) {
@@ -343,11 +478,20 @@ export default {
         });
       }
 
+      if (self.$refs.hasOwnProperty("dyn-form")) {
+        if (self.$refs["dyn-form"].length == selected_variations.length) {
+          has_variation_success = true;
+        }
+      } else {
+        has_variation_success = true;
+      }
+
       await self.$validate().then(function (success) {
-        if (success) {
+        if (success && has_variation_success) {
           axios
             .post(self.baseUrl + "order-submit", {
               ...self.form,
+              delivery_charges: self.selected_zone_price,
               selected_variations,
               product_id: self.product_id,
               pr_price: self.pr_price,
@@ -381,6 +525,27 @@ export default {
     update_total: function (e) {
       this.var_price = this.var_price - e["old"];
       this.var_price = this.var_price + e["price"];
+    },
+    datepicker_set: function () {
+      const self = this;
+      $(function () {
+        $("#datepicker")
+          .datepicker({
+            autoclose: true,
+            startDate: new Date(),
+          })
+          .on("changeDate", function (evt) {
+            self.form.sel_date = moment(evt.date).format("YYYY-MM-DD");
+          })
+          .on("hide", function (evt) {
+            if (typeof evt.date === "undefined") {
+              self.form.sel_date = "";
+            }
+          });
+        if (self.form.sel_date != "") {
+          $("#datepicker").datepicker("setDate", new Date(self.form.sel_date));
+        }
+      });
     },
   },
 };

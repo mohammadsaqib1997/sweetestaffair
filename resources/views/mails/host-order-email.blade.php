@@ -30,22 +30,26 @@
               </tr>
               <tr>
                 <td style="padding: 10px 15px;">
-                  <table cellpadding="0" cellspacing="0"
-                    style="width: 100%;">
+                  <table cellpadding="0" cellspacing="0" style="width: 100%;">
                     <tbody>
                       <tr>
                         <td>
-                          <h4>Shipping Information</h4>
+                          <h4>{{ $order['delivery_type'] == 'Deliver' ? 'Shipping': 'Personal' }} Information</h4>
                           <p>
                             Name: {{ $order['customer_name'] }}
                             <br>
                             Phone: {{ $order['customer_phone'] }}
                             <br>
                             Email: {{ $order['customer_email'] }}
+                            @if($order['delivery_type'] == 'Deliver')
                             <br><br>
-                            Shipping Address: {{ $order['customer_address'] }}
+                            <strong>Shipping Address</strong>: {{ $order['customer_address'] }}
+                            <br>
+                            <strong>Zone</strong>: {{ $order['selected_zone'] }}
+                            @endif
                           </p>
-                          <h4 style="margin-bottom: 5px;">Delivery Date/Time</h4>
+                          <h4 style="margin-bottom: 5px;">
+                            {{ $order['delivery_type'] == 'Deliver' ? 'Delivery': 'Pickup' }} Date/Time</h4>
                           <p style="margin-top: 5px; font-size:12px;">
                             Date: {{ date('d-m-Y', strtotime($order['deliver_date'])) }}
                             <br>
@@ -71,27 +75,30 @@
                               <tr>
                                 <td></td>
                                 @if($opt->label == "Personalized Message" || $opt->label == "Type alphabet")
-                                <td>{{ $opt->label }}: {{ $opt->key }}</td>
+                                <td style="padding-right: 20px;">{{ $opt->label }}: {{ $opt->key }}</td>
                                 @else
-                                <td>{{ $opt->label }}</td>
+                                <td style="padding-right: 20px;">{{ $opt->label }}</td>
                                 @endif
                                 <td align="right">RS.{{ $opt->price }}</td>
                               </tr>
                               @endforeach
 
-                              {{-- <tr>
+                              @if($order['delivery_type'] == 'Deliver')
+                              <tr>
                                 <td colspan="3">
                                   <hr style="border: .4px solid #b9a468;">
                                 </td>
                               </tr>
                               <tr>
                                 <td colspan="2">Subtotal</td>
-                                <td align="right">RS.1,019</td>
+                                <td align="right">RS.{{ $order['base_price']*$order['qty'] }}</td>
                               </tr>
+
                               <tr>
                                 <td colspan="2">Incl. delivery fee</td>
-                                <td align="right">RS.50</td>
-                              </tr> --}}
+                                <td align="right">RS.{{ $order['delivery_charges'] }}</td>
+                              </tr>
+                              @endif
                               <tr>
                                 <td colspan="3">
                                   <hr style="border: .4px solid #b9a468;">
@@ -126,8 +133,8 @@
                             <tbody>
                               <tr>
                                 <td align="center">
-                                  <a href="#m_-8286469640810487660_"
-                                    style="color:#555555;text-decoration:none!important">22C, Tauheed Commercial, street
+                                  <a href="#" style="color:#555555;text-decoration:none!important">22C, Tauheed
+                                    Commercial, street
                                     26, DHA, Karachi, Pakistan</a><br>
                                   <span style="color: #3e271d;font-weight: 600;">© {{ date('yy') }}
                                     SweetestAffair</span>&nbsp;&nbsp;&nbsp;&nbsp;<a

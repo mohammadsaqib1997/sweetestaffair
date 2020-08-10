@@ -415,7 +415,7 @@
     },
     "grand-celebration-bundle": {
         "id": 12,
-        "cat": "",
+        "cat": "hampers",
         "title": "Grand Celebration Bundle",
         "price-range": "Rs. 24,500",
         "img": "images/products/grand-celebration-bundle/main-500x500.jpg",
@@ -447,7 +447,7 @@
     },
     "celebration-bundle": {
         "id": 13,
-        "cat": "",
+        "cat": "hampers",
         "title": "Celebration Bundle",
         "price-range": "Rs. 19,500",
         "img": "images/products/celebration-bundle/main-500x500.jpg",
@@ -479,7 +479,7 @@
     },
     "pop-me-balloon": {
         "id": 14,
-        "cat": "",
+        "cat": "hampers",
         "title": "Pop-Me Balloon",
         "price-range": "Rs. 7,500",
         "img": "images/products/pop-me-balloon/main-500x500.jpg",
@@ -548,7 +548,7 @@
     },
     "eternity-gold-rose-in-glass-dome": {
         "id": 17,
-        "cat": "",
+        "cat": "flowers",
         "eid-specials": true,
         "title": "Eternity Gold Rose in Glass Dome",
         "price-range": "Rs. 17,500",
@@ -581,7 +581,7 @@
     },
     "10-rose-box": {
         "id": 21,
-        "cat": "",
+        "cat": "flowers",
         "eid-specials": true,
         "title": "10 Rose box",
         "price-range": "Rs. 12,500",
