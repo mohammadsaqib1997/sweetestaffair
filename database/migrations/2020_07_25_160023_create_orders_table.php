@@ -25,9 +25,10 @@ class CreateOrdersTable extends Migration
             $table->string('selected_zone', 50)->nullable();
             $table->enum('delivery_type', ['Deliver', 'Pickup']);
             $table->bigInteger('delivery_charges', false, true)->default(0);
+            $table->double('online_charges', 22, 2)->default(0.00);
             $table->bigInteger('base_price', false, true);
             $table->mediumInteger('qty', false, true);
-            $table->bigInteger('total_price', false, true);
+            $table->double('total_price', 22, 2);
             $table->tinyInteger('order_status')->default(0);
             $table->date('deliver_date');
             $table->string('deliver_time', 50);

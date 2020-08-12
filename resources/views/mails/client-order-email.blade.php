@@ -98,7 +98,6 @@
                               </tr>
                               @endforeach
 
-                              @if($order['delivery_type'] == 'Deliver')
                               <tr>
                                 <td colspan="3">
                                   <hr style="border: .4px solid #b9a468;">
@@ -106,12 +105,21 @@
                               </tr>
                               <tr>
                                 <td colspan="2">Subtotal</td>
-                                <td align="right">RS.{{ $order['base_price']*$order['qty'] }}</td>
+                                <td align="right">
+                                  RS.{{ number_format((float)$order['base_price']*$order['qty'], 2, '.', '') }}</td>
                               </tr>
 
                               <tr>
+                                <td colspan="2">Online Charges</td>
+                                <td align="right">RS.{{ number_format((float)$order['online_charges'], 2, '.', '') }}
+                                </td>
+                              </tr>
+                              
+                              @if($order['delivery_type'] == 'Deliver')
+                              <tr>
                                 <td colspan="2">Incl. delivery fee</td>
-                                <td align="right">RS.{{ $order['delivery_charges'] }}</td>
+                                <td align="right">RS.{{ number_format((float)$order['delivery_charges'], 2, '.', '') }}
+                                </td>
                               </tr>
                               @endif
                               <tr>
@@ -121,7 +129,7 @@
                               </tr>
                               <tr>
                                 <td colspan="2">Total</td>
-                                <td align="right">RS.{{ $order['total_price'] }}</td>
+                                <td align="right">RS.{{ number_format((float)$order['total_price'], 2, '.', '') }}</td>
                               </tr>
                             </tbody>
                           </table>

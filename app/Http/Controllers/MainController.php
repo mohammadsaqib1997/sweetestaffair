@@ -96,6 +96,7 @@ class MainController extends Controller
         $order->selected_zone = $req->sel_zone;
         $order->delivery_type = $req->delivery_type;
         $order->delivery_charges = $req->delivery_charges;
+        $order->online_charges = $req->online_charges;
         $order->base_price = $req->pr_price;
         $order->qty = $req->qty;
         $order->total_price = $req->pr_total;

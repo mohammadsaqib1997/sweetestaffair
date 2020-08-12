@@ -72,39 +72,23 @@
           >{{ validation.firstError('form.qty') }}</p>
         </div>
 
-        <div class="form-row my-5 mx-0 gr-total">
-          <div class="col-12">
-            <div class="row mx-0">
-              <div class="col">
-                <label class="my-2">Product Price</label>
-              </div>
-              <div class="col text-right">
-                <label class="my-2">{{ prd_qty > 1 ? 'x'+prd_qty+' ': '' }}Rs. {{ pr_price }}/-</label>
-              </div>
-            </div>
-            <div v-if="form.delivery_type == 'Deliver'" class="row mx-0">
-              <div class="col">
-                <label class="my-2">Delivery Charges</label>
-              </div>
-              <div class="col text-right">
-                <label class="my-2">Rs. {{ selected_zone_price }}/-</label>
-              </div>
-            </div>
-
-            <div class="row mx-0 border-top">
-              <div class="col">
-                <label class="my-2">Grand Total</label>
-              </div>
-              <div class="col text-right">
-                <label class="my-2">Rs. {{ pr_total }}/-</label>
-              </div>
-            </div>
-          </div>
+        <div class="form-group">
+          <label for>Personal Message</label>
+          <textarea
+            name
+            class="form-control"
+            v-model="form.message"
+            id
+            rows="3"
+            placeholder="Any comments ..."
+          ></textarea>
         </div>
 
+        <hr class="my-4" />
+
         <!-- Delivery or Pickup -->
+        <h3 class="mb-3">Delivery Type</h3>
         <div class="form-group">
-          <label class="d-block" for>Select Delivery Type</label>
           <div class="custom-control custom-radio custom-control-inline">
             <input
               type="radio"
@@ -177,22 +161,11 @@
             >{{ validation.firstError('form.sel_date') || validation.firstError('form.sel_time') }}</p>
           </div>
         </div>
-        <div class="form-group">
-          <label for>Personal Message</label>
-          <textarea
-            name
-            class="form-control"
-            v-model="form.message"
-            id
-            rows="3"
-            placeholder="Any comments ..."
-          ></textarea>
-        </div>
+
+        <hr class="my-4" />
 
         <!-- customer information -->
-        <h3
-          class="mb-3 mt-5"
-        >{{ form.delivery_type == "Deliver" ? 'Shipping': 'Personal' }} Information</h3>
+        <h3 class="mb-3">{{ form.delivery_type == "Deliver" ? 'Shipping': 'Personal' }} Information</h3>
         <div class="form-group">
           <div class="form-row">
             <div class="col">
@@ -254,6 +227,48 @@
         </div>
         <!-- customer information -->
 
+        <hr class="my-4" />
+
+        <div class="form-row my-5 mx-0 gr-total">
+          <div class="col-12 px-0">
+            <div class="row mx-0">
+              <div class="col">
+                <label class="my-2">Product Price</label>
+              </div>
+              <div class="col text-right">
+                <label
+                  class="my-2"
+                >{{ prd_qty > 1 ? 'x'+prd_qty+' ': '' }}Rs. {{ parseFloat(pr_price).toFixed(2) }}/-</label>
+              </div>
+            </div>
+            <div class="row mx-0">
+              <div class="col">
+                <label class="my-2">Online Charges</label>
+              </div>
+              <div class="col text-right">
+                <label class="my-2">Rs. {{ parseFloat(online_charges).toFixed(2) }}/-</label>
+              </div>
+            </div>
+            <div v-if="form.delivery_type == 'Deliver'" class="row mx-0">
+              <div class="col">
+                <label class="my-2">Delivery Charges</label>
+              </div>
+              <div class="col text-right">
+                <label class="my-2">Rs. {{ parseFloat(selected_zone_price).toFixed(2) }}/-</label>
+              </div>
+            </div>
+
+            <div class="row mx-0 border-top">
+              <div class="col">
+                <label class="my-2">Grand Total</label>
+              </div>
+              <div class="col text-right">
+                <label class="my-2">Rs. {{ parseFloat(pr_total).toFixed(2) }}/-</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="form-group">
           <button @click="submit" class="btn thm-btn" :disabled="form_process == true">
             Let's Lock It &nbsp;&nbsp;
@@ -282,6 +297,14 @@ export default {
   computed: {
     has_delr: function () {
       return this.form.delivery_type == "Deliver";
+    },
+    online_charges: function () {
+      let pr = this.pr_price;
+      let qty = this.prd_qty;
+      if (pr !== 0 && qty !== 0) {
+        return (pr * qty * 3.3) / 100;
+      }
+      return 0;
     },
     delr_type_text: function () {
       if (this.has_delr) {
@@ -325,6 +348,9 @@ export default {
       if (self.has_delr) {
         pr += self.selected_zone_price;
       }
+
+      pr += self.online_charges;
+
       return pr;
     },
   },
@@ -491,6 +517,7 @@ export default {
           axios
             .post(self.baseUrl + "order-submit", {
               ...self.form,
+              online_charges: self.online_charges,
               delivery_charges: self.selected_zone_price,
               selected_variations,
               product_id: self.product_id,
@@ -565,8 +592,9 @@ export default {
 }
 
 .gr-total {
-  border-top: 1px solid #cacaca;
-  border-bottom: 1px solid #cacaca;
+  background-color: #e1c16c;
+  border: 1px solid #3d251d;
+  box-shadow: 0 3px 10px -2px rgb(61 37 29 / 0.5);
 }
 
 .invalid {
