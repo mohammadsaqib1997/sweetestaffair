@@ -64,5 +64,5 @@ Route::group(['prefix' => '/', 'middleware' => 'private'], function () {
     Route::get('/payment-cancel', 'MainController@viewCancelPaymentPage');
     Route::get('/payment-failed', 'MainController@viewFailedPaymentPage')->name('payment-failed');
 
-    Route::get('/order-email-client/{order_id}', 'MainController@orderEmails');
+    // Route::get('/order-email-client/{order_id}', 'MainController@orderEmails');
 });
