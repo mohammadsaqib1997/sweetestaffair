@@ -199,6 +199,18 @@ class MainController extends Controller
         }
     }
 
+    public function checkOrder($order_id)
+    {
+        $order = Order::where('id', $order_id)->where('order_status', 1)->firstOrFail();
+        
+        $prd = $this->prdById($order['product_id']);
+        $details = [
+            'order' => $order,
+            'prd' => $prd
+        ];
+        return view('mails.host-order-email', $details);
+    }
+
     private function prdById($id)
     {
         $prds = $this->product_catalogue();
