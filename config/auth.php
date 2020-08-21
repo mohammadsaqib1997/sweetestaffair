@@ -48,10 +48,9 @@ return [
         ],
 
         'admin' => [
-            'redirectTo' => 'admin.home',
             'driver' => 'session',
-            'provider' => 'admin'
-        ]
+            'provider' => 'admins'
+        ],
     ],
 
     /*
@@ -77,10 +76,10 @@ return [
             'model' => App\User::class,
         ],
 
-        // 'admin' => [
-        //     'driver' => 'eloquent',
-        //     'model' => App\Admin::class
-        // ]
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'username' => 'admin',
             'email' => 'mohammadsaqib1997@gmail.com',
-            'password' => bcrypt('admin123..321'),
+            'password' => Hash::make('admin123..321'),
             'created_at' => now()
         ]);
     }

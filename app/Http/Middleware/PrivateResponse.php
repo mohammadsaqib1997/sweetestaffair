@@ -18,11 +18,9 @@ class PrivateResponse
     {
         $response = $next($request);
 
-        $response->withHeaders([
-            'Cache-Control' => 'no-store, no-cache, max-age=0, must-revalidate, private',
-            'Expires'       => Carbon::now()->format('D, d M Y H:i:s T'),
-        ]);
-
-        return $response;
+        $response = $next($request);
+        return $response->header('Cache-Control', 'nocache, no-store, max-age=0, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', 'Fri, 01 Jan 1990 00:00:00 GMT');
     }
 }

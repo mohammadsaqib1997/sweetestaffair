@@ -176,21 +176,21 @@ class MainController extends Controller
         ];
         try {
             Mail::send(
-                'mails.client-order-email',
-                $details,
-                function ($message) use ($details) {
-                    $message->from('order@sweetestaffair.com');
-                    $message->to($details['order']['customer_email']);
-                    $message->subject('Your order has been placed.');
-                }
-            );
-            Mail::send(
                 'mails.host-order-email',
                 $details,
                 function ($message) use ($details) {
                     $message->from('order@sweetestaffair.com');
                     $message->to('order@sweetestaffair.com');
                     $message->subject('New order received');
+                }
+            );
+            Mail::send(
+                'mails.client-order-email',
+                $details,
+                function ($message) use ($details) {
+                    $message->from('order@sweetestaffair.com');
+                    $message->to($details['order']['customer_email']);
+                    $message->subject('Your order has been placed.');
                 }
             );
             return true;
