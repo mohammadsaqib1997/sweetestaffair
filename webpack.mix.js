@@ -41,10 +41,8 @@ mix
     //     Prefixer()
     // ])
     // .js('resources/js/home.js', 'public/js')
-    .js('resources/js/product.js', 'public/js')
-    // .js('resources/js/hamper.js', 'public/js')
-    // .js('resources/js/gallery.js', 'public/js')
-    // .js('resources/js/luxury-box.js', 'public/js')
+    // .js('resources/js/product.js', 'public/js')
+    .js('resources/js/admin/product-add.js', 'public/js')
 
 
 

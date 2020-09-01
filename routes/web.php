@@ -69,5 +69,20 @@ Route::post('login', 'LoginController@login')->name("login-submit");
 Route::post('logout', 'LoginController@logout')->name("logout");
 
 Route::group(['prefix' => '_admin', 'middleware' => ['private', 'auth_admin']], function () {
-    Route::get('/', 'Dashboard@index')->name('dashboard');
+
+    Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
+        Route::get('/', 'Dashboard@index')->name('dashboard');
+
+        Route::group(['prefix' => 'product'], function () {
+            // product
+            Route::get('/add-product', 'Product@add')->name('add-product');
+
+            // category
+            Route::get('/add-category', 'Category@index')->name('add-cats');
+            Route::post('/add-category', 'Category@store')->name('store-cats');
+            Route::get('/edit-category/{id}', 'Category@edit')->name('edit-cats');
+            Route::put('/edit-category/{id}', 'Category@update')->name('update-cats');
+            Route::delete('/delete-category', 'Category@destroy')->name('delete-cats');
+        });
+    });
 });

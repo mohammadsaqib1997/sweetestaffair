@@ -33,7 +33,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password], $request->input('remember'))) {
-            return redirect()->intended(route('dashboard'));
+            return redirect()->intended(route('admin.dashboard'));
         }
         return back()->withInput($request->only('username', 'remember'))->with("error", "Error: Invalid credentials!");
     }
