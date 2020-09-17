@@ -148,8 +148,8 @@
             <div class="col">
               <select v-model="form.sel_time" class="form-control">
                 <option value>Select Time</option>
-                <option value="9am-12pm">Between 9am - 12pm</option>
-                <option value="12pm-3pm">Between 12pm - 3pm</option>
+                <option value="11am-1pm">Between 11am - 1pm</option>
+                <option value="1pm-3pm">Between 1pm - 3pm</option>
                 <option value="3pm-6pm">Between 3pm - 6pm</option>
                 <option value="6pm-9pm">Between 6pm - 9pm</option>
               </select>
