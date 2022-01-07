@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
     @yield('page-css')
 
-    <title>@yield('title', 'Sweetest Affair')</title>
+    <title>@yield('title', 'ABC Shop')</title>
 </head>
 
 <body>

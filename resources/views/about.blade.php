@@ -27,15 +27,15 @@
         </div>
     </div> --}}
     <div class="container py-4">
-        <h3 class="display-4">The Sweetest Affair</h3>
+        <h3 class="display-4">The ABC Shop</h3>
         <div class="about-content text-center pt-4">
-            <p>The Sweetest Affair was born at a time when The Middle East enjoyed the golden years and celebrations
+            <p>The ABC Shop was born at a time when The Middle East enjoyed the golden years and celebrations
                 were larger than life. It was a time in the <span class="f-nor">2000</span>s where Dubai became a vibrant capital and all
                 sought to genuinely experience the joy of life; a time of all things beautiful and luxurious, and a
                 time when the concept of haute-couture in Gifting and Events was being born! In <span class="f-nor">2007</span>, two childhood
                 buddy's decided to bring about the worldwide fad of cupcakes to the Middle East. A tiny muffin paved
-                the way to glitz and glam in all things sweet. One thing led to the other and today The Sweetest
-                Affair runs its own stand alone store in Karachi, Pakistan; extending its services across the
+                the way to glitz and glam in all things sweet. One thing led to the other and today The ABC
+                Shop runs its own stand alone store in City, Country; extending its services across the
                 country and the Middle East.</p>
         </div>
     </div>

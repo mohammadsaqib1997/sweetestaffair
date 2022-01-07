@@ -60,7 +60,7 @@
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; <span class="f-nor">{{ date('Y') }}</span>. Powered By <a
-                                href="https://dcomm.pk" target="_blank">Dimensions Communications.</a></span>
+                                href="#" target="_blank">MSaqib1997 corp.</a></span>
                     </div>
                 </div>
             </footer>

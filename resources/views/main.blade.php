@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md">
-                <h4>The Sweetest Affair</h4>
+                <h4>The ABC Shop</h4>
                 <p class="lead text-justify mb-3 mb-md-0">
                     Every accomplishment, every relationship, each sort of bond carries a special flavor in it, and here
                     we try to enhance these flavors by adding our own. ...
@@ -46,9 +46,9 @@
 <section class="bg-img-sec lazy info-sec" data-src="{{ asset('images/sld-bn-3.jpg') }}">
     <div class="container-fluid">
         <div class="content">
-            <h3 class="display-4">The Sweetest Affair</h3>
+            <h3 class="display-4">The ABC Shop</h3>
             <div class="text-center pt-4">
-                <p>The Sweetest Affair was born at a time when The Middle East enjoyed the golden years and celebrations
+                <p>The ABC Shop was born at a time when The Middle East enjoyed the golden years and celebrations
                     were larger than life. It was a time in the 2000s where Dubai became a vibrant capital and all
                     sought to genuinely experience the joy of life; a time of all things beautiful and luxurious, and a
                     time when the concept of haute-couture in Gifting and Events was being born! In 2007, two childhood
@@ -68,8 +68,8 @@
         <div class="content">
             <p>Each milestone, each relationship, every kind of bond calls for a unique celebration.</p>
             <p>A celebration of moments and emotions that are just blooming, even celebrating those that have already
-                blossomed. For such moments, there are luxury flower arrangements by The Floral Studio at Sweetest
-                Affair.</p>
+                blossomed. For such moments, there are luxury flower arrangements by The Floral Studio at ABC
+                Shop.</p>
         </div>
     </div>
     <div class="container">
@@ -105,7 +105,7 @@
                     detail of production. Whether it is the material, size, shape, embossment, or ornaments, anything
                     imaginable is possible!</p>
 
-                <p>The Sweetest Affair carefully selects the best velvet, leather, wood and silk from around the world
+                <p>The ABC Shop carefully selects the best velvet, leather, wood and silk from around the world
                     to ensure bespoke quality and the best value.</p>
 
                 <p>All creation of packaging takes place in the atelier where the artisans are their own critics; with a
@@ -143,15 +143,15 @@
     <div class="container-fluid">
         <h3 class="display-4 mb-4">Contact Us</h3>
         <p class="txt-content">Since we are a Digital Boutique it would be best if you contact us via email at
-            info@sweetestaffair.com
-            In case you need to get in touch with us via phone you can call us on +923 00 22 96 555, (Business hours:
+            info@abc-msaqib1997.com
+            In case you need to get in touch with us via phone you can call us on +123 11 11 11 111, (Business hours:
             Seven days a week, 11:00 am - 09:00 pm)</p>
         <div class="row mx-w-1100">
             <div class="col mb-4 mb-md-0">
                 <div class="cont-item">
                     <h4>PERSONALIZED</h4>
                     <p>Custom-made bespoke flower arrangements that will exceed your expectations.
-                        <br>Get The Sweetest Affair flowers customized by adding patterns, symbols, letters & much more!
+                        <br>Get The ABC Shop flowers customized by adding patterns, symbols, letters & much more!
                     </p>
                 </div>
             </div>
@@ -159,15 +159,15 @@
                 <div class="cont-item">
                     <h4>CORPORATE ORDERS</h4>
                     <p>Corporate gifting, professional relationships, important conferences – celebrate them with the
-                        The Sweetest Affair experience. Please contact us on +923 00 22 96 555 to know more.</p>
+                        The ABC Shop experience. Please contact us on +123 11 11 11 111 to know more.</p>
                 </div>
             </div>
             <div class="col">
                 <div class="cont-item">
                     <h4>EVENTS</h4>
                     <p>Weddings, birthdays, Valentine’s Day, dinners, first dates, candlelight
-                        <br>getaways – the list is endless and so are the The Sweetest Affair offerings. Please contact
-                        us on +923 00 22 96 555
+                        <br>getaways – the list is endless and so are the The ABC Shop offerings. Please contact
+                        us on +123 11 11 11 111
                         to know more.</p>
                 </div>
             </div>

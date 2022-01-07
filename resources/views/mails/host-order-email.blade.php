@@ -20,7 +20,7 @@
             <tbody>
               <tr>
                 <td style="text-align: center;padding-top: 20px;padding-bottom: 20px;">
-                  <img src="{{ asset('images/logo.png') }}" alt="SweetestAffair" style="width: 330px;">
+                  <img src="{{ asset('images/logo.png') }}" alt="ABCMSaqib1997" style="width: 330px;">
                 </td>
               </tr>
               <tr>
@@ -145,7 +145,7 @@
                                     Commercial, street
                                     26, DHA, Karachi, Pakistan</a><br>
                                   <span style="color: #3e271d;font-weight: 600;">© {{ date('yy') }}
-                                    SweetestAffair</span>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                    ABCMSaqib1997</span>&nbsp;&nbsp;&nbsp;&nbsp;<a
                                     style="color:#555555;text-decoration:none"></a>
                                 </td>
                               </tr>

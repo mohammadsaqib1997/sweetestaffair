@@ -12,7 +12,7 @@
         <img src="{{ asset('images/logo.png') }}" alt="" />
         <h1 class="display-4">Under Construction</h1>
         <p>We're making lots of improvements and will be back soon.</p>
-        <p class="copy">&copy; Copyright <span class="f-nor">{{ date('Y') }}</span>, Sweetest Affair.</p>
+        <p class="copy">&copy; Copyright <span class="f-nor">{{ date('Y') }}</span>, ABC Shop.</p>
         <a href="{{ route('main') }}">Back To Home Page</a>
     </div>
 </section>

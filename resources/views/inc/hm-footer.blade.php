@@ -35,6 +35,6 @@
             </li>
         </ul>
 
-        <p>Copyright &copy; <span class="f-nor">{{ date('Y') }}</span>. Powered By <a href="https://dcomm.pk" target="_blank">Dimensions Communications.</a></p>
+        <p>Copyright &copy; <span class="f-nor">{{ date('Y') }}</span>. Powered By <a href="#" target="_blank">MSaqib1997 corp.</a></p>
     </div>
 </footer>

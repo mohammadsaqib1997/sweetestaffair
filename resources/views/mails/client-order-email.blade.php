@@ -20,7 +20,7 @@
             <tbody>
               <tr>
                 <td style="text-align: center;padding-top: 20px;padding-bottom: 20px;">
-                  <img src="{{ asset('images/logo.png') }}" alt="SweetestAffair" style="width: 330px;">
+                  <img src="{{ asset('images/logo.png') }}" alt="ABCMSaqib1997" style="width: 330px;">
                 </td>
               </tr>
               <tr>
@@ -42,7 +42,7 @@
                     <br>
                     <br>
                     If you have any questions, feel free to contact us at any time via email at
-                    <a style="color: #3e271d;" href="mailto:support@sweetestaffair.com">support@sweetestaffair.com</a>.
+                    <a style="color: #3e271d;" href="mailto:support@abc-msaqib1997.com">support@abc-msaqib1997.com</a>.
                   </p>
                   <table cellpadding="0" cellspacing="0"
                     style="width: 100%;border-top: 1px solid #3e271d;margin-top: 30px;padding-top: 10px;">
@@ -160,7 +160,7 @@
                                     Commercial, street
                                     26, DHA, Karachi, Pakistan</a><br>
                                   <span style="color: #3e271d;font-weight: 600;">© {{ date('yy') }}
-                                    SweetestAffair</span>&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                    ABCMSaqib1997</span>&nbsp;&nbsp;&nbsp;&nbsp;<a
                                     style="color:#555555;text-decoration:none"></a>
                                 </td>
                               </tr>

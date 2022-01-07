@@ -18,7 +18,7 @@
 <section class="bg-light py-5 content-sec" id="form">
     <div class="container">
         <h3>Get in Touch</h3>
-        <p>If you have general questions about what we do or how The Sweetest Affair can help you,
+        <p>If you have general questions about what we do or how The ABC Shop can help you,
             <br>please fill out the contact form below or call us directly on the given numbers.</p>
         <div class="row mt-4">
 
@@ -60,13 +60,13 @@
             <div class="col-12 col-md-6">
                 <div class="row">
                     <div class="col-md-4 mt-3"><strong>Office Address :</strong></div>
-                    <div class="col-md-8 mt-md-3 mt-2">22C, Tauheed Commercial, street 26, DHA, Karachi, Pakistan</div>
+                    <div class="col-md-8 mt-md-3 mt-2">22C, ABC shop, street 123, ABC, City, Country</div>
                     <div class="col-md-4 mt-3"><strong>Phone :</strong></div>
-                    <div class="col-md-8 mt-md-3 mt-2">+923 00 22 96 555</div>
+                    <div class="col-md-8 mt-md-3 mt-2">+123 11 11 11 111</div>
                     <div class="col-md-4 mt-3"><strong>Days & Timings :</strong></div>
                     <div class="col-md-8 mt-md-3 mt-2">Seven days a week,<br>10:30 am - 11:30 pm</div>
                     <div class="col-md-4 mt-3"><strong>Email addresses :</strong></div>
-                    <div class="col-md-8 mt-md-3 mt-2">info@sweetestaffair.com</div>
+                    <div class="col-md-8 mt-md-3 mt-2">info@abc-msaqib1997.com</div>
                 </div>
 
                 {{-- <hr>

@@ -15,8 +15,8 @@
         {{-- <div class="content">
             <p>Each milestone, each relationship, every kind of bond calls for a unique celebration.</p>
             <p>A celebration of moments and emotions that are just blooming, even celebrating those that have already
-                blossomed. For such moments, there are luxury flower arrangements by The Floral Studio at Sweetest
-                Affair.</p>
+                blossomed. For such moments, there are luxury flower arrangements by The Floral Studio at ABC
+                Shop.</p>
             <p>Aesthetically appealing to the eye, these flower arrangements mark the strength of a bond, bring out the
                 butterfly-blushed smile of an 18-year-old girl, highlight the rouge on a mother’s face when she hears
                 from her distant son. These flowers laden this moment with beauty, luxury and panache and evoke a part
